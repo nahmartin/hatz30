@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang='en-US' xml:lang='en-US'>
+<head>
+
+
+<title>Car Finder | Worldwide Vintage Autos</title>
+<meta content='initial-scale=1,maximum-scale=5,user-scalable=yes' name='viewport'>
+<meta name='description'>
+<meta content='classic, collector, best, price, affordable, cars, trucks, ford, 4x4, offroad, Chevrolet, worldwide' name='keywords'>
+<meta charset='utf-8'>
+
+
+    {% load static %}
+<link rel="shortcut icon" href="{% static '/assets/worldwide/favicon.ico' %}" type="image/x-icon" />
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='max-image-preview:large' name='robots'>
+<link rel="stylesheet" media="all" href="{% static '/assets/worldwide/application-f23bd28d9eeb00b1f10882c7576ed9b0.css' %}" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="AQRGGEvuH9xKo89aW8DT6h9/c0DJNymu98jI7EUMHe0r1GeimkE7JfFWt+YV8wAOvM2ydqVGcMnls/3ZESAhpQ==" />
+
+
+<script src="{% static '/ajax/libs/jquery/1.10.2/jquery.min.js' %}"></script>
+<script src="{% static '/assets/worldwide/application-9633395d5a6657cd4c32ad05152e6f0b.js' %}"></script>
+<script async defer src='https://www.google.com/recaptcha/api.js?onload=__onLoadRecaptcha&amp;render=explicit'></script>
+
+
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4C87S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH37N9G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google 2nd Tag Manager (noscript) -->
+
+<div id='wrap'>
+<header id="ss1">
+<div class='worldwide-container'>
+<a class="worldwide-nav-logo" href="/"></a>
+<div class='worldwide-nav-links desktop-nav'>
+<div class='top-bar'>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+
+<style>
+
+    #submit_button {
+  background: none !important;;
+	border-radius: 0px;
+	bottom: unset;
+	position: relative;
+	margin: 0 auto;
+	height: unset;
+	width: unset;
+	background-color: transparent;
+	border: 2px solid #e73113;
+	color: #e73113;
+	display: block;
+	padding: 10px 20px;
+	width: 200px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'din';
+	font-weight: bold;
+	transition: .2s all ease-in-out;
+	-webkit-transition: .2s all ease-in-out;
+	-moz-transition: .2s all ease-in-out;
+}
+#submit_button:hover {
+background-color: #e73113 !important;
+color: #fff;
+}
+        /* Styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+#vip-modal {
+
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the page */
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0px; /* Adjust the top position as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    opacity: 0; /* Start with opacity 0 for the animation */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add smooth transition */
+    justify-content: center;
+}
+
+#vip-modal.show {
+    max-height: 500px; /* Adjust the max-height as needed */
+    opacity: 1; /* Show the modal with opacity 1 */
+}
+
+
+        /* Styles for form content */
+        .modal-content {
+            text-align: center;
+        }
+
+        /* Styles for form fields */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left within form group */
+        }
+
+        .label1 {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input1 {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 2px solid black;
+            box-sizing: border-box;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        /* Styles for buttons */
+        button {
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Orange submit button */
+        button[type="button"] {
+            background-color: orange;
+            color: white;
+        }
+
+
+          .li1{
+
+            text-align: left;
+            margin: 0 10px 5px 0;
+            line-height: 17px;
+            color: #333;
+          }
+
+          .label1{
+            font-size: 13px;
+            text-align: left;
+            margin: 0 10px 5px 0;
+            line-height: 17px;
+            color: #333;
+          }
+
+        .input1 {
+	background-color: transparent;
+	border-radius: 0;
+	width: 100%;
+	position: relative;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: 40px;
+	border: none;
+	margin: 0 auto;
+	border-bottom: 2px solid #444444;
+	color: #0d0d0d;
+	font-size: 18px;
+	transition: .2s all ease-in-out;
+	font-family: 'din';
+	font-weight: normal;
+  background-image: none;
+  display: block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  border:none !important;
+  border-bottom: 2px solid #444444 !important;
+  background: none !important;
+  font-size: 18px !important;;
+
+}
+
+        .label1 {
+	font-family: 'din';
+	font-weight: normal !important;
+  font-style: normal !important;
+	transition: ease-out 200ms;
+	opacity: 1;
+	transform: translateY(calc(50% + 1px));
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+    </style>
+
+<script>
+    function openVIPModal() {
+        // Show the modal with a smooth fade-in animation
+        const modal = document.getElementById('vip-modal');
+        const back = document.getElementById('hii');
+        back.style.zIndex = '13';
+        back.style.display = 'flex';
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        console.log('Form opened!');
+
+    }
+
+    function closeVIPModal() {
+        // Close the modal with a smooth fade-out animation
+        const modal = document.getElementById('vip-modal');
+        const back = document.getElementById('hii');
+        back.style.display = 'none';
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300); // Adjust the timeout to match the transition duration
+    }
+
+
+    document.getElementById("vip-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+         console.log('Form submitted!');
+    var name = document.getElementById('name').value;
+    var last = document.getElementById('last').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+ var formData = {
+        'name': name,
+        'last': last,
+        'email': email,
+        'phone': phone,
+        // Add more form fields as needed
+    };
+    // Send the data to Django using AJAX
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
+        data: formData,
+        dataType: 'json',
+        success: function (data) {
+            console.log('Form submitted successfully:', data);
+            // Add any additional actions you want to perform after successful submission
+        },
+        error: function (error) {
+            console.error('Error submitting form:', error);
+            // Handle errors or display a message to the user
+        }
+    });
+    });
+
+    function submitVIPForm() {
+        // Handle form submission logic here
+        console.log('Form submitt123123312ed!');
+        // You can add the logic to send the form data to your server or perform any other actions.
+        // Replace the following line with your actual form submission logic.
+        // document.getElementById('vip-form').submit();
+
+    // Other form fields can be added in a similar manner
+
+    }
+</script>
+<a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal()">
+    <div class='inner'>
+        <span class='btn-front'>VIP list</span>
+        <span class='btn-back'>Join Now</span>
+    </div>
+</a>
+
+<div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii" onclick="closeVIPModal()"></div>
+
+<div id="vip-modal" class="modal" style="z-index: 140; margin-top: 20px;">
+    <button aria-label="Close" class="close" data-dismiss="modal" id="modal-close" type="button" onclick="closeVIPModal()" style="margin-top: 20px; margin-right: 20px"></button>
+    <div class="modal-content">
+        <h3 class="black centered">Become a VIP</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px;">
+            <p class="col-1">1. Be the first to hear about vehicles in our inventory BEFORE they hit the market.</p>
+            <p class="col-1">2. Receive a 72-hour exclusive window with the FIRST OPPORTUNITY to buy.</p>
+            <p class="col-1">3. Receive discounted VIP pricing</p>
+            <p class="col-1">4. Not receive other emails or solicitations.</p>
+        </div>
+        <!-- Your form content goes here -->
+        <form id="vip-form" method="post" action="{% url 'submit_form' %}">
+            <div>
+                {% csrf_token %}
+            </div>
+            <div class="form-group">
+                <label for="name" class="label1">First Name:</label>
+                <input type="text" id="name" name="name" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="last" class="label1">Last Name:</label>
+                <input type="text" id="last" name="last" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="email" class="label1">Email:</label>
+                <input type="email" id="email" name="email" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="phone"class="label1">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="form-control input1">
+            </div>
+            <!-- Add more form fields as needed -->
+            <button type="submit" id="submit_button" onclick="closeVIPModal()">Submit now!</button>
+        </form>
+    </div>
+</div>
+
+</div>
+<nav class='desktop-nav bottom-bar'>
+<ul class='nav navbar-nav'>
+<li class='dropdown'>
+<a class="dropdown-toggle" href="#0">Inventory
+</a><ul class='dropdown-menu'>
+<li>
+<a href="{% url 'sold' %}">Sold Vehicles</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/#">Current Inventory</a>
+</li>
+<li>
+<a href="{% url 'contact' %}">Contact</a>
+
+</li>
+<li>
+<a href="{% url 'car-finder' %}">Car Finder</a>
+</li>
+<li>
+<a href="{% url 'news' %}">Blog</a>
+</li>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">About Us
+</a><ul class='dropdown-menu'>
+<li>
+<a href="{% url 'about' %}">About</a>
+</li>
+<li>
+<a href="{% url 'testimonials' %}">Testimonials</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+</div>
+<a class="worldwide-mobile-logo" href="/"></a>
+</div>
+</header>
+<div id='worldwide-menu-toggle'>
+<div id='hamburger'>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div id='cross'>
+<span></span>
+<span></span>
+</div>
+</div>
+<div class='mobile-nav-slide-out'>
+<div class='mobile-nav-container'>
+<div class='worldwide-nav-links mobile-nav'>
+<div class='top-bar'>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+
+<style>
+    @media only screen and (max-width: 767px) {
+
+         #vip-modal1 {
+        width: 95%;
+        height: 85%;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add smooth transition */
+    }
+
+
+    #vip-modal1.show {
+        width: 95%;
+        height: 85%;
+
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    .label1, .input1 {
+        width: 100%;
+    }
+    .modal{
+        top: 50%;
+        margin-top: 0px !important;
+    }
+    .modal .modal-content{
+        margin-top: 0px !important;
+    }
+
+}
+</style>
+
+<a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal1()">
+        <div class='inner'>
+<span class='btn-front'>VIP list</span>
+<span class='btn-back'>Join Now</span>
+        </div>
+    </a>
+<div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii1" onclick="closeVIPModal1()"></div>
+<div id="vip-modal1" class="modal" style="z-index: 140">
+    <div class="modal-content">
+        <button aria-label="Close" class="close" data-dismiss="modal" id="modal-close" type="button" onclick="closeVIPModal1()"></button>
+        <h3 class="black centered">Become a VIP</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px;">
+            <p class="col-1">1. Be the first to hear about vehicles in our inventory BEFORE they hit the market.</p>
+            <p class="col-1">2. Receive a 72-hour exclusive window with the FIRST OPPORTUNITY to buy.</p>
+            <p class="col-1">3. Receive discounted VIP pricing</p>
+            <p class="col-1">4. Not receive other emails or solicitations.</p>
+        </div>
+        <!-- Your form content goes here -->
+        <form id="vip-form1" method="post" action="{% url 'submit_form' %}">
+            <div>
+                {% csrf_token %}
+            </div>
+            <div class="form-group">
+                <label for="name" class="label1">First Name:</label>
+                <input type="text" id="name" name="name" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="last" class="label1">Last Name:</label>
+                <input type="text" id="last" name="last" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="email" class="label1">Email:</label>
+                <input type="email" id="email" name="email" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="phone"class="label1">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="form-control input1">
+            </div>
+            <!-- Add more form fields as needed -->
+            <button type="submit" id="submit_button" onclick="closeVIPModal1()">Submit now!</button>
+        </form>
+    </div>
+
+    <script>
+         setTimeout(function () {
+    openVIPModal1();
+}, 2500);
+    function openVIPModal1() {
+        // Show the modal with a smooth fade-in animation
+        const modal = document.getElementById('vip-modal1');
+        const header = document.getElementById('ss1');
+        header.style.zIndex = '139';
+        const back = document.getElementById('hii1');
+        back.style.zIndex = '10000';
+        back.style.display = 'flex';
+        modal.style.zIndex = '10001';
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        console.log('Formsasasa opened!');
+
+    }
+
+    function closeVIPModal1() {
+        // Close the modal with a smooth fade-out animation
+        const modal = document.getElementById('vip-modal1');
+        const back = document.getElementById('hii1');
+        back.style.display = 'none';
+        back.style.zIndex = '0';
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300); // Adjust the timeout to match the transition duration
+    }
+
+
+    document.getElementById("vip-form1").addEventListener("submit", function (e) {
+        e.preventDefault();
+         console.log('Form submitted!');
+    var name = document.getElementById('name').value;
+    var last = document.getElementById('last').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+ var formData = {
+        'name': name,
+        'last': last,
+        'email': email,
+        'phone': phone,
+        // Add more form fields as needed
+    };
+    // Send the data to Django using AJAX
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
+        data: formData,
+        dataType: 'json',
+        success: function (data) {
+            console.log('Form submitted successfully:', data);
+            // Add any additional actions you want to perform after successful submission
+        },
+        error: function (error) {
+            console.error('Error submitting form:', error);
+            // Handle errors or display a message to the user
+        }
+    });
+    });
+
+    function submitVIPForm1() {
+        // Handle form submission logic here
+        console.log('Form submitt123123312ed!');
+        // You can add the logic to send the form data to your server or perform any other actions.
+        // Replace the following line with your actual form submission logic.
+        // document.getElementById('vip-form').submit();
+
+    // Other form fields can be added in a similar manner
+
+    }
+</script>
+</div>
+</div>
+<nav class='desktop-nav bottom-bar'>
+<ul class='nav navbar-nav'>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">Inventory
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/vehicles/sold">Sold Vehicles</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/#">Current Inventory</a>
+</li>
+<li>
+<a href="{% url 'contact' %}">Contact</a>
+
+</li>
+<li>
+<a href="">Car Finder</a>
+</li>
+<li>
+<a href="{% url 'news' %}">Blog</a>
+</li>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">About Us
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/about">About</a>
+</li>
+<li>
+<a href="/testimonials">Testimonials</a>
+</li>
+<li>
+<a href="/team">Team</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+</div>
+</div>
+</div>
+
+<div id='content'>
+<div class='worldwide-fw-wrap bot-pad'>
+<div class='worldwide-container top-pad secondary-container'>
+<h1 class='white center'>
+Car Finder
+</h1>
+<div class='secondary-content consign-content carfinder-content'>
+<div class='left-col'>
+<p>Looking for something in particular? Fill out the form, and we will notify you when we find what you're looking for. Let the Worldwide Vintage Autos team leverage our network of sellers to find the perfect vehicle for you.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<style>
+        .modal-backdrop.in{
+            z-index: 10;
+        }
+        .modal-backdrop.show{
+            z-index: 10;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    // Attach an event listener to the "worldwide-contact" form
+    document.getElementById("worldwide-contact").addEventListener("submit", function (e) {
+        // ... Your existing code for handling the contact form submission
+    });
+
+    // Attach an event listener to the "callButton" element
+    document.getElementById("callButton").addEventListener("click", function () {
+        // Show the "carfinder-modal" when the button is clicked
+        $('#carfinder-modal').modal('show');
+        console.log('Modal shown');
+    });
+
+    // Attach an event listener to the "carfinder-contact" form
+    document.getElementById("carfinder-contact").addEventListener("submit", function (e) {
+        // Prevent the default form submission behavior
+        e.preventDefault();
+        console.log('Carfinder Form submitted!');
+
+        // Retrieve form data for the "Find a Car" button modal
+        var name = document.getElementById('carfinder_name').value;
+        var email = document.getElementById('carfinder_email').value;
+        var message = document.getElementById('carfinder_message').value;
+
+        // Create an object with form data
+        var formData = {
+            'name': name,
+            'email': email,
+            'message': message
+            // Add more form fields as needed
+        };
+
+        // Send the form data to Django using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '{% url 'submit_carfinder_modal_form' %}', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Parse the response JSON if the request was successful
+                    var data = JSON.parse(xhr.responseText);
+                    console.log('Carfinder Form submitted successfully:', data);
+                    // Add any additional actions you want to perform after successful submission
+                } else {
+                    // Log an error message if the request was not successful
+                    console.error('Error submitting Carfinder form:', xhr.statusText);
+                    // Handle errors or display a message to the user
+                }
+            }
+        };
+
+        // Send the form data as a JSON string in the request body
+        xhr.send(JSON.stringify(formData));
+    });
+</script>
+
+<div class='worldwide-btn center' data-toggle="modal" data-target='#carfinder-modal' id='callButton'>
+  <div class='inner'>
+    <span class='btn-front'>Find a Car</span>
+    <span class='btn-back'>Contact The team</span>
+  </div>
+</div>
+<div class='modal fade' id='carfinder-modal' role='dialog' tabindex='-1' style="z-index: 141;">
+    <div class='modal-dialog modal-dialog-centered' role='document'>
+        <div class='modal-content-container'>
+            <button aria-label='Close' class='close' data-dismiss='modal' id='carfinder-modal-close' type='button'></button>
+                <h3 style="color: black">Fill In the contact form from Contact Tab</h3>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class='right-col'>
+<p><img src="https://dealeraccelerate-dev.s3.amazonaws.com/worldwide/marketing_assets/11/shutterstock_609053510.jpg" alt="" width="600" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='carfinder-modal' role='dialog' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<a id='formAnchor1671451274' name='form1671451274'>
+<script src='https://fs19.formsite.com/include/form/embedManager.js?1671451274'></script>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+<div class='modal fade' id='vip-modal' role='dialog' style='bottom:unset' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<h3 class='black centered'>
+Become a VIP
+</h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class='footer'>
+<div class='contact-block'>
+<div class='info-block'>
+<h6>
+Find
+</h6>
+<a href="https://www.google.com/maps/search/Worldwide+Vintage+Autos+4001+Forest+St+Denver+CO+80216">4001 Forest St
+<br>
+Denver CO 80216
+</a></div>
+<div class='info-block'>
+
+</div>
+<div class='info-block'>
+<h6>
+Follow
+</h6>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+
+</div>
+<div class='info-block'>
+<h6>
+Email
+</h6>
+<a href="mailto:sales@worldwidevintageautos.com">sales@worldwidevintageautos.com</a>
+</div>
+</div>
+<div class='image-box'>
+<img src="{% static '/assets/worldwide/bbb-aplus-8ce9bac98c70304cc04424cb4c71e19d.png' %}" alt="Bbb aplus" />
+<img src="{% static '/assets/worldwide/ebay-5star-0a1d256d9c49079086c9976773c0cc2b.png' %}" alt="Ebay 5star" />
+</div>
+<a class="footer-logo" href="/"><img src="{% static '/assets/worldwide/wwva-logo-2a51f46607e6ba3aa4d63140cf33b7e0.png' %}" alt="Wwva logo" />
+</a></div>
+
+<div class='modal fade' id='vip-auto-modal' role='dialog' style='bottom:unset;' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<h3 class='black centered'>
+Become a VIP
+</h3>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class='sd-standard-footer'>
+<div class='sd-container'>
+<div class='sd-copy-row'>
+<a title="Privacy Policy" target="_blank" href="https://speeddigital.com/client-privacy-policy/?client=worldwidevintageautos">Privacy Policy</a>
+<a title="Terms and Conditions" target="_blank" href="https://speeddigital.com/terms-and-conditions">Terms and Conditions</a>
+</div>
+<div class='built-by-sd-logo'>
+<a title="Powered by Speed Digital" target="_blank" rel="noopener" href="https://www.speeddigital.com?inbound-traffic">Powered by
+<span>SpeedDigital</span>
+<div class='sd-logo-light-bg'>
+<svg viewBox="0 0 768.19 73.7" xmlns="http://www.w3.org/2000/svg"><path d="m18.08 49.8c-1.57 6.19-2 9-1 9.86.63.73 1.57.83 4.61.83h15.1c2.72 0 3.88-.1 4.82-.94.73-.84 1.57-2.52 2.62-6.81 1-3.46 1-5.25.11-6.19a6.09 6.09 0 0 0 -3-1.15l-20.34-4.2c-5.45-1.15-7.65-2.09-9.75-4.19-3.13-3.01-3.55-7.66-1.45-16.56 1.88-8.45 4.5-12.59 7.44-15.62 3.35-3.26 7.76-4.51 13.31-4.51h23.45c6 0 9.54 1 11.63 3.14 3.36 3.36 3.36 8.49 1 20h-15.95c1.15-6.18 1.26-8.28.42-9.11-.63-.63-1.57-.95-4.82-.95h-13c-2.62 0-3.88.11-4.72.95s-1.47 2.65-2.51 6.41c-.84 3.46-.84 5 0 5.87.52.53 1.15.94 3.14 1.26l20 4.09c5.35 1.15 7.76 2.2 9.75 4.19 3.17 3.15 3.9 7.83 1.6 16.83-2.31 9.11-4.51 13-7.76 16.25s-7.65 4.5-13.42 4.5h-25.9c-5.87 0-9.12-1-11.22-3.14-3.14-3.2-2.93-9.9.32-20.81z" fill="#262626"/><path d="m195.19 73.7h-54.09l18.24-73.38h54.1l-3.36 13.42h-37l-4 15.83h28.62l-3.25 12.79h-28.51l-4.4 17.92h36.9z" fill="#262626"/><path d="m263.46 73.7h-54.1l18.24-73.38h54.1l-3.35 13.42h-37l-4 15.83h28.65l-3.24 12.79h-28.55l-4.4 17.92h36.9z" fill="#262626"/><path d="m327.54.32c10.06 0 15 1.57 18.55 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.21-12.37 27.36-6.29 6.19-13.31 7.55-23.38 7.55h-34.39l18.25-73.38zm-17.82 13.1-11.72 47.07h14.89c5 0 8-.63 10.07-2.72s4.04-5.77 7.83-20.77 3.67-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.32-1.89z" fill="#262626"/><g fill="#fb991c"><path d="m404 .32c10.07 0 15 1.57 18.56 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.17-12.37 27.36-6.29 6.19-13.32 7.55-23.38 7.55h-34.41l18.24-73.38zm-17.82 13.1-11.76 47.07h14.89c5 0 8-.63 10.06-2.72s4.09-5.77 7.87-20.77 3.66-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.33-1.89z"/><path d="m431 73.7 18.2-73.38h17.19l-18.24 73.38z"/><path d="m500.68 46.34 3.14-12.47h32.29c-.31 1.36-1.47 6.28-2 8.07-4.61 18-8.91 23.48-11.74 26.31-4.61 4.61-9 5.45-16.25 5.45h-18.23c-8 0-11.33-1.57-13.42-3.67-4.3-4.29-6.29-12.89-1.05-34.7 5.13-21.07 9.85-26.63 12.79-29.56 4.61-4.62 9-5.45 16.35-5.45h18.77c8 0 11.43 1.46 13.53 3.56 3.25 3.25 4.61 8.91 2.72 20.55h-16.14c1.36-7.34.73-8.91-.11-9.75-.63-.63-1.78-1-5.24-1h-12.48c-3.35 0-4.72.42-5.66 1.36s-2.94 3.46-7.44 22-3.57 21.15-2.51 22.19c.74.74 1.79 1.05 5.24 1.05h12.58c3.46 0 4.83-.42 5.77-1.36s2.1-2.62 4.93-12.58z"/><path d="m542.32 73.7 18.24-73.38h17.19l-18.24 73.38z"/><path d="m625.36 13.84-14.88 59.86h-17.09l14.78-59.86h-21.91l3.46-13.52h61.22l-3.46 13.52z"/><path d="m691 0c5.56 0 6.29 1.36 6.81 6.92l5.35 66.78h-17l-1.05-18.34h-25.03l-9.85 18.34h-18l39.7-68.87c2.31-4 3.25-4.83 7.23-4.83zm-24.1 42.67h17.71l-1.46-27.36h-1.37z"/><path d="m734.12 60.28h34.07l-3.25 13.42h-51.26l18.24-73.38h17.08z"/></g><path d="m122.19 16.46 4.01-16.14h-37.65l-18.24 73.38h16.98l6.21-24.98h20.66l4.01-16.14h-20.66l4.01-16.12h20.66l-4.01 16.15h20.67l4.01-16.15z" fill="#262626"/></svg>
+
+</div>
+<div class='sd-logo-dark-bg'>
+<svg viewBox="0 0 768.19 73.7" xmlns="http://www.w3.org/2000/svg"><path d="m18.08 49.8c-1.57 6.19-2 9-1 9.86.63.73 1.57.83 4.61.83h15.1c2.72 0 3.88-.1 4.82-.94.73-.84 1.57-2.52 2.62-6.81 1-3.46 1-5.25.11-6.19a6.09 6.09 0 0 0 -3-1.15l-20.34-4.2c-5.45-1.15-7.65-2.09-9.75-4.19-3.13-3.01-3.55-7.66-1.45-16.56 1.88-8.45 4.5-12.59 7.44-15.62 3.35-3.26 7.76-4.51 13.31-4.51h23.45c6 0 9.54 1 11.63 3.14 3.36 3.36 3.36 8.49 1 20h-15.95c1.15-6.18 1.26-8.28.42-9.11-.63-.63-1.57-.95-4.82-.95h-13c-2.62 0-3.88.11-4.72.95s-1.47 2.65-2.51 6.41c-.84 3.46-.84 5 0 5.87.52.53 1.15.94 3.14 1.26l20 4.09c5.35 1.15 7.76 2.2 9.75 4.19 3.17 3.15 3.9 7.83 1.6 16.83-2.31 9.11-4.51 13-7.76 16.25s-7.65 4.5-13.42 4.5h-25.9c-5.87 0-9.12-1-11.22-3.14-3.14-3.2-2.93-9.9.32-20.81z" fill="#fff"/><path d="m195.19 73.7h-54.09l18.24-73.38h54.1l-3.36 13.42h-37l-4 15.83h28.62l-3.25 12.79h-28.51l-4.4 17.92h36.9z" fill="#fff"/><path d="m263.46 73.7h-54.1l18.24-73.38h54.1l-3.35 13.42h-37l-4 15.83h28.65l-3.24 12.79h-28.55l-4.4 17.92h36.9z" fill="#fff"/><path d="m327.54.32c10.06 0 15 1.57 18.55 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.21-12.37 27.36-6.29 6.19-13.31 7.55-23.38 7.55h-34.39l18.25-73.38zm-17.82 13.1-11.72 47.07h14.89c5 0 8-.63 10.07-2.72s4.04-5.77 7.83-20.77 3.67-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.32-1.89z" fill="#fff"/><g fill="#fb991c"><path d="m404 .32c10.07 0 15 1.57 18.56 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.17-12.37 27.36-6.29 6.19-13.32 7.55-23.38 7.55h-34.41l18.24-73.38zm-17.82 13.1-11.76 47.07h14.89c5 0 8-.63 10.06-2.72s4.09-5.77 7.87-20.77 3.66-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.33-1.89z"/><path d="m431 73.7 18.2-73.38h17.19l-18.24 73.38z"/><path d="m500.68 46.34 3.14-12.47h32.29c-.31 1.36-1.47 6.28-2 8.07-4.61 18-8.91 23.48-11.74 26.31-4.61 4.61-9 5.45-16.25 5.45h-18.23c-8 0-11.33-1.57-13.42-3.67-4.3-4.29-6.29-12.89-1.05-34.7 5.13-21.07 9.85-26.63 12.79-29.56 4.61-4.62 9-5.45 16.35-5.45h18.77c8 0 11.43 1.46 13.53 3.56 3.25 3.25 4.61 8.91 2.72 20.55h-16.14c1.36-7.34.73-8.91-.11-9.75-.63-.63-1.78-1-5.24-1h-12.48c-3.35 0-4.72.42-5.66 1.36s-2.94 3.46-7.44 22-3.57 21.15-2.51 22.19c.74.74 1.79 1.05 5.24 1.05h12.58c3.46 0 4.83-.42 5.77-1.36s2.1-2.62 4.93-12.58z"/><path d="m542.32 73.7 18.24-73.38h17.19l-18.24 73.38z"/><path d="m625.36 13.84-14.88 59.86h-17.09l14.78-59.86h-21.91l3.46-13.52h61.22l-3.46 13.52z"/><path d="m691 0c5.56 0 6.29 1.36 6.81 6.92l5.35 66.78h-17l-1.05-18.34h-25.03l-9.85 18.34h-18l39.7-68.87c2.31-4 3.25-4.83 7.23-4.83zm-24.1 42.67h17.71l-1.46-27.36h-1.37z"/><path d="m734.12 60.28h34.07l-3.25 13.42h-51.26l18.24-73.38h17.08z"/></g><path d="m122.19 16.46 4.01-16.14h-37.65l-18.24 73.38h16.98l6.21-24.98h20.66l4.01-16.14h-20.66l4.01-16.12h20.66l-4.01 16.15h20.67l4.01-16.15z" fill="#fff"/></svg>
+
+</div>
+</a></div>
+</div>
+</div>
+
+</body>
+</html>

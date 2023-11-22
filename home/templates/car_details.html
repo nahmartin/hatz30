@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang='en-US' xml:lang='en-US'>
+<head>
+
+
+
+    {% load static %}
+
+<title>{{ car.year }} {{ car.brand }} {{ car.model }} | Worldwide Vintage Autos</title>
+<meta content='initial-scale=1,maximum-scale=5,user-scalable=yes' name='viewport'>
+<meta content='Worldwide Vintage Autos is one of the largest classic automobile consignment dealerships in the world. With over 200 vehicles in stock spanning over 80,000...' name='description'>
+<meta content='{{ car.year }} {{ car.brand }} {{ car.model }} V8 N/A {{ car.vin }}' name='keywords'>
+<meta charset='utf-8'>
+<link rel="shortcut icon" href="{% static '/assets/worldwide/favicon.ico' %}" type="image/x-icon" />
+<meta content='{{ car.year }} {{ car.brand }} {{ car.model }}' property='og:title'>
+<meta content='{{ car.photo_test_main|safe }}' property='og:image'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='max-image-preview:large' name='robots'>
+<link rel="stylesheet" media="all" href="{% static '/assets/worldwide/application-f23bd28d9eeb00b1f10882c7576ed9b0.css' %}" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ATByKRgZDuT+Jr7HNB2MrBbWblfpEqgcETszxx2YOi8r4FOTybYqHUXTxnt6Ll9ItWSvYYVj8XsDQAbySbQGZw==" />
+
+
+<script src="{% static '/ajax/libs/jquery/1.10.2/jquery.min.js' %}"></script>
+<script src="{% static '/assets/worldwide/application-9633395d5a6657cd4c32ad05152e6f0b.js' %}"></script>
+<script async defer src='https://www.google.com/recaptcha/api.js?onload=__onLoadRecaptcha&amp;render=explicit'></script>
+
+
+</head>
+<body>
+
+<div id='wrap'>
+<header>
+<div class='worldwide-container'>
+<a class="worldwide-nav-logo" href="/"></a>
+<div class='worldwide-nav-links desktop-nav'>
+<div class='top-bar'>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+
+    #submit_button {
+  background: none !important;;
+	border-radius: 0px;
+	bottom: unset;
+	position: relative;
+	margin: 0 auto;
+	height: unset;
+	width: unset;
+	background-color: transparent;
+	border: 2px solid #e73113;
+	color: #e73113;
+	display: block;
+	padding: 10px 20px;
+	width: 200px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'din';
+	font-weight: bold;
+	transition: .2s all ease-in-out;
+	-webkit-transition: .2s all ease-in-out;
+	-moz-transition: .2s all ease-in-out;
+}
+#submit_button:hover {
+background-color: #e73113 !important;
+color: #fff;
+}
+        /* Styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+#vip-modal {
+
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the page */
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0px; /* Adjust the top position as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    opacity: 0; /* Start with opacity 0 for the animation */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add smooth transition */
+    justify-content: center;
+}
+
+#vip-modal.show {
+    max-height: 500px; /* Adjust the max-height as needed */
+    opacity: 1; /* Show the modal with opacity 1 */
+}
+
+
+        /* Styles for form content */
+        .modal-content {
+            text-align: center;
+        }
+
+        /* Styles for form fields */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left within form group */
+        }
+
+        .label1 {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input1 {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 2px solid black;
+            box-sizing: border-box;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        /* Styles for buttons */
+        button {
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Orange submit button */
+        button[type="button"] {
+            background-color: orange;
+            color: white;
+        }
+
+
+          .li1{
+
+            text-align: left;
+            margin: 0 10px 5px 0;
+            line-height: 17px;
+            color: #333;
+          }
+
+          .label1{
+            font-size: 13px;
+            text-align: left;
+            margin: 0 10px 5px 0;
+            line-height: 17px;
+            color: #333;
+          }
+
+        .input1 {
+	background-color: transparent;
+	border-radius: 0;
+	width: 100%;
+	position: relative;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: 40px;
+	border: none;
+	margin: 0 auto;
+	border-bottom: 2px solid #444444;
+	color: #0d0d0d;
+	font-size: 18px;
+	transition: .2s all ease-in-out;
+	font-family: 'din';
+	font-weight: normal;
+  background-image: none;
+  display: block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  border:none !important;
+  border-bottom: 2px solid #444444 !important;
+  background: none !important;
+  font-size: 18px !important;;
+
+}
+
+        .label1 {
+	font-family: 'din';
+	font-weight: normal !important;
+  font-style: normal !important;
+	transition: ease-out 200ms;
+	opacity: 1;
+	transform: translateY(calc(50% + 1px));
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+    </style>
+
+<script>
+    function openVIPModal() {
+        // Show the modal with a smooth fade-in animation
+        const modal = document.getElementById('vip-modal');
+        const back = document.getElementById('hii');
+        back.style.zIndex = '13';
+        back.style.display = 'flex';
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        console.log('Form opened!');
+
+    }
+
+    function closeVIPModal() {
+        // Close the modal with a smooth fade-out animation
+        const modal = document.getElementById('vip-modal');
+        const back = document.getElementById('hii');
+        back.style.display = 'none';
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300); // Adjust the timeout to match the transition duration
+    }
+
+
+    document.getElementById("vip-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+         console.log('Form submitted!');
+    var name = document.getElementById('name').value;
+    var last = document.getElementById('last').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+ var formData = {
+        'name': name,
+        'last': last,
+        'email': email,
+        'phone': phone,
+        // Add more form fields as needed
+    };
+    // Send the data to Django using AJAX
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
+        data: formData,
+        dataType: 'json',
+        success: function (data) {
+            console.log('Form submitted successfully:', data);
+            // Add any additional actions you want to perform after successful submission
+        },
+        error: function (error) {
+            console.error('Error submitting form:', error);
+            // Handle errors or display a message to the user
+        }
+    });
+    });
+
+    function submitVIPForm() {
+        // Handle form submission logic here
+        console.log('Form submitt123123312ed!');
+        // You can add the logic to send the form data to your server or perform any other actions.
+        // Replace the following line with your actual form submission logic.
+        // document.getElementById('vip-form').submit();
+
+    // Other form fields can be added in a similar manner
+
+    }
+</script>
+<a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal()">
+    <div class='inner'>
+        <span class='btn-front'>VIP list</span>
+        <span class='btn-back'>Join Now</span>
+    </div>
+</a>
+
+<div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii" onclick="closeVIPModal()"></div>
+
+<div id="vip-modal" class="modal" style="z-index: 140; margin-top: 20px;">
+    <button aria-label="Close" class="close" data-dismiss="modal" id="modal-close" type="button" onclick="closeVIPModal()" style="margin-top: 20px; margin-right: 20px"></button>
+    <div class="modal-content">
+        <h3 class="black centered">Become a VIP</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px;">
+            <p class="col-1">1. Be the first to hear about vehicles in our inventory BEFORE they hit the market.</p>
+            <p class="col-1">2. Receive a 72-hour exclusive window with the FIRST OPPORTUNITY to buy.</p>
+            <p class="col-1">3. Receive discounted VIP pricing</p>
+            <p class="col-1">4. Not receive other emails or solicitations.</p>
+        </div>
+        <!-- Your form content goes here -->
+        <form id="vip-form" method="post" action="{% url 'submit_form' %}">
+            <div>
+                {% csrf_token %}
+            </div>
+            <div class="form-group">
+                <label for="name" class="label1">First Name:</label>
+                <input type="text" id="name" name="name" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="last" class="label1">Last Name:</label>
+                <input type="text" id="last" name="last" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="email" class="label1">Email:</label>
+                <input type="email" id="email" name="email" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="phone"class="label1">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="form-control input1">
+            </div>
+            <!-- Add more form fields as needed -->
+            <button type="submit" id="submit_button" onclick="closeVIPModal()">Submit now!</button>
+        </form>
+    </div>
+</div>
+</div>
+<nav class='desktop-nav bottom-bar'>
+<ul class='nav navbar-nav'>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">Inventory
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/#">Current Inventory</a>
+</li>
+<li>
+<a href="/vehicles/sold">Sold Vehicles</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/">Current Inventory</a>
+</li>
+<li>
+<a href="{% url 'contact' %}">Contact</a>
+
+</li>
+    <li>
+<a href="{% url 'car-finder' %}">Car Finder</a>
+</li>
+<li>
+<a href="{% url 'news' %}">Blog</a>
+</li>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">About Us
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/about">About</a>
+</li>
+<li>
+<a href="/testimonials">Testimonials</a>
+</li>
+<li>
+<a href="/team">Team</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+</div>
+<a class="worldwide-mobile-logo" href="/"></a>
+<a class="worldwide-mobile-phone" href="tel:(877) 422-1570"></a>
+</div>
+</header>
+<div id='worldwide-menu-toggle'>
+<div id='hamburger'>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div id='cross'>
+<span></span>
+<span></span>
+</div>
+</div>
+<div class='mobile-nav-slide-out'>
+<div class='mobile-nav-container'>
+<div class='worldwide-nav-links mobile-nav'>
+<div class='top-bar'>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+
+<a class="worldwide-btn secondary icon mail shorter" data-target="#vip-modal" data-toggle="modal" href="/vip"><div class='inner'>
+<span class='btn-front'>VIP list</span>
+<span class='btn-back'>Join Now</span>
+</div>
+</a></div>
+<nav class='desktop-nav bottom-bar'>
+<ul class='nav navbar-nav'>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">Inventory
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/vehicles/sold">Sold Vehicles</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/#">Current Inventory</a>
+</li>
+<li>
+<a href="{% url 'contact' %}">Contact</a>
+
+</li>
+<li>
+<a href="{% url 'car-finder' %}">Car Finder</a>
+</li>
+<li>
+<a href="{% url 'news' %}">Blog</a>
+</li>
+<li class='dropdown '>
+<a class="dropdown-toggle" href="#0">About Us
+</a><ul class='dropdown-menu'>
+<li>
+<a href="/about">About</a>
+</li>
+<li>
+<a href="/testimonials">Testimonials</a>
+</li>
+<li>
+<a href="/team">Team</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</nav>
+</div>
+</div>
+</div>
+
+<div id='content'>
+<div class='worldwide-fw-wrap top-pad'>
+<div id='print-show-wrap'>
+<div class='print-header-wrap'>
+<div class='make-row'>
+{{ car.year }}
+    {{ car.brand }}
+{{ car.model }}
+
+</div>
+<div class='price'>
+Sold
+</div>
+</div>
+<div class='print-details-wrap'>
+<div class='left-col'>
+<div class='print-specs-container'>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Engine:
+</strong>
+</div>
+<div class='detail-col'>
+{{ car.engine }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Transmission:
+</strong>
+</div>
+<div class='detail-col'>
+    {{ car.gearbox }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Color:
+</strong>
+</div>
+<div class='detail-col'>
+{{ car.body_color }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Interior:
+</strong>
+</div>
+<div class='detail-col'>
+    {{ car.interior_color }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Mileage:
+</strong>
+</div>
+<div class='detail-col'>
+{{ car.mileage }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+<strong>
+Stock #
+</strong>
+</div>
+<div class='detail-col'>
+{{ car.stock }}
+</div>
+</div>
+</div>
+<div class='print-spec-details-container'>
+<h2>
+Drivetrain
+</h2>
+<div class='spec-row'>
+<div class='header-col'>
+Engine Size:
+</div>
+<div class='detail-col'>
+{{ car.engine }}
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+Transmission Type:
+</div>
+<div class='detail-col'>
+N/A
+</div>
+</div>
+<h2>
+Chassis
+</h2>
+<h2>
+Body
+</h2>
+<div class='spec-row'>
+<div class='header-col'>
+Body Color Original:
+</div>
+<div class='detail-col'>
+No
+</div>
+</div>
+<div class='spec-row'>
+<div class='header-col'>
+Stripes
+</div>
+<div class='detail-col'>
+No
+</div>
+</div>
+</div>
+<div class='print-footer-wrap'>
+<h2>
+Dealer Info
+</h2>
+<br>
+<div class='address'>
+<p>Worldwide Vintage Autos</p>
+<p>4001 Forest St</p>
+<p></p>
+<p>Denver CO, 80216</p>
+</div>
+<img src="/assets/v3/SD_LOGO_on-white-sm-0de554fdc76a9895b0772886cdb833aa.png" alt="Sd logo on white sm" />
+</div>
+</div>
+<div class='right-col'>
+<div class='gallery-hero'>
+<img src="{{ car.photo_test_main }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" />
+</div>
+<div class='vehicle-description'>
+</div>
+</div>
+</div>
+</div>
+
+<div class='row details-wrap'>
+<div class='vehicle-title'>
+<h1 class='year-make-model'>
+<span class='year'>{{ car.year }}</span>
+<span class='make'>{{ car.brand }}</span>
+<span class='model'>{{ car.model }}</span>
+<span class='sub-model'></span>
+</h1>
+</div>
+<div class='row'>
+<div class='show-header col-sm-12'>
+<ol class='breadcrumb' itemscope='true' itemtype='http://schema.org/BreadcrumbList'>
+<li class='breadcrumb-item' itemprop='itemListElement' itemscope='true' itemtype='http://schema.org/ListItem'>
+<a itemprop="item" href="/"><span itemprop='name'>
+Back to Results
+</span>
+<meta content='2' itemprop='position'>
+</a></li>
+<li class='breadcrumb-item active' itemprop='itemListElement' itemscope='true' itemtype='http://schema.org/ListItem'>
+<a itemprop="item" href=""><span itemprop='name'>
+{{ car.brand }} {{ car.model }}
+</span>
+<meta content='3' itemprop='position'>
+</a></li>
+</ol>
+</div>
+</div>
+
+<div class='col-sm-12 col-md-8 vehicle-lead-image vehicle-image left-show'>
+<div class='wrap-gallery'>
+<div id='worldwide-video-large'>
+<div class='embed-responsive embed-responsive-16by9'>
+{{ car.video_link|safe }}
+</div>
+</div>
+<div id='worldwide-lead-image'>
+<div class='vehicle-top-image'>
+<div class='image-counter'>
+<span class='current-photo'>1</span>
+<span>/ 51</span>
+</div>
+<div class='lead-image-left'>
+<a class='prev left carousel-control' href='#previous-image' style="background-image: url('https://www.worldwidevintageautos.com/assets/worldwide/icons/arrow-left-w-6643fd28f955698584af6d92f123dc2f.svg')"></a>
+</div>
+<div class='lead-image-right'>
+<a class='next right carousel-control' href='#next-image'></a>
+</div>
+<img class="cast-img-responsive" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" data-original="https://cdn.dealeraccelerate.com/worldwide/1/7410/457357/1920x1440/w/1977-chevrolet-k20" src="{{ car.photo_test_main|safe }}" />
+<a class="zoom-lead-icon" href="#"><img id="zoom-icon" src="https://www.worldwidevintageautos.com/assets/worldwide/icons/expand-icon-b62bac869183c814dc0f255322248f9d.png" alt="Expand icon" />
+</a></div>
+</div>
+<div class='cast-gallery'>
+<div class='show-car-thumbs-container' id='more-cars'>
+<div class='non-image-thumb' id='worldwide-video-thumb'>
+<div class='worldwide-img-container'>
+<img class="img-responsive" src="{{ car.video_photo|safe }}" alt="0" />
+<div class='overlay video'></div>
+</div>
+</div>
+<div class='show-car-thumbs'>
+{% for car_photo in car.carphoto_set.all %}
+<a data-original="{{ car_photo.photo1|safe }}" data-no-turbolink="true" data-index="0" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" thumb="{{ car_photo.photo1|safe }}" href="{{ car_photo.photo1|safe }}"><img class="img-responsive" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" src="{{ car_photo.photo1|safe }}" />
+</a>
+{% endfor %}
+</div>
+
+</div>
+<div class='gallery-btn-container'>
+<div class='worldwide-btn secondary center more-btn' onclick='showAllCars()'>
+<div class='inner'>
+<span class='btn-front'>View More</span>
+<span class='btn-back'>View More</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='mobile-specs'>
+<div class='price-line'>
+<h2 class='price'>${{ car.price }}</h2>
+<div class='finance-line'>
+<h5 class='monthly-price'>
+${{ car.price_month }}/Month
+<div class='tooltip'>
+Estimated payment based on 10% down over 72 months
+</div>
+</h5>
+</div>
+<div class='default-header'>
+{{ car.shorter_info }}
+</div>
+<dl class='spec-summary'>
+<div class='spec-line stock'>
+<dt>
+Stock
+</dt>
+<dd>{{ car.stock }}</dd>
+</div>
+<div class='spec-line vin'>
+<dt>
+VIN
+</dt>
+<dd>{{ car.vin }}</dd>
+</div>
+<div class='spec-line engine'>
+<dt>
+Engine
+</dt>
+<dd>{{ car.engine }}</dd>
+</div>
+<div class='spec-line trans'>
+<dt>
+Transmission
+</dt>
+<dd>N/A</dd>
+</div>
+<div class='spec-line mileage'>
+<dt class='tooltip-spec'>
+Mileage
+<div class='tooltip'>
+Mileage exempt unless otherwise noted below
+</div>
+</dt>
+<dd>{{ car.mileage }}</dd>
+</div>
+</dl>
+<a data-toggle="modal" data-target="#contact-modal" class="worldwide-block-btn secondary" href="#">Request More Info</a>
+</div>
+
+</div>
+<div class='vehicle-info'>
+<div class='vehicle-specs'>
+<h5>
+Vehicle Specs
+</h5>
+<div class='spec-summary-container'>
+<div class='col-md-6 col-xs-12 spec-section'>
+<h6 class='col-xs-12'>Basic</h6>
+<dl class='spec-section-list'>
+<div class='col-sm-12'>
+<dt>Year</dt>
+<dd>1977</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Make</dt>
+<dd>Chevrolet</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Model</dt>
+<dd>K20</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Miles</dt>
+<dd>{{ car.mileage }}</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Vin</dt>
+<dd>{{ car.vin }}</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Stock</dt>
+<dd>{{ car.stock }}</dd>
+</div>
+</dl>
+</div>
+
+<div class='col-md-6 col-xs-12 spec-section'>
+<h6 class='col-xs-12'>Engine</h6>
+<dl class='spec-section-list'>
+<div class='col-sm-12'>
+<dt>Engine Size</dt>
+<dd>{{ car.engine }}</dd>
+</div>
+<div class='col-sm-12'>
+<dt>Transmission Type</dt>
+<dd>N/A</dd>
+</div>
+</dl>
+</div>
+
+<div class='col-md-6 col-xs-12 spec-section'>
+<h6 class='col-xs-12'>Body</h6>
+<dl class='spec-section-list'>
+<div class='col-sm-12'>
+<dt>Body Color</dt>
+<dd>{{ car.body_color }}</dd>
+</div>
+</dl>
+</div>
+
+<div class='col-md-6 col-xs-12 spec-section'>
+<h6 class='col-xs-12'>Interior</h6>
+<dl class='spec-section-list'>
+<div class='col-sm-12'>
+<dt>Interior Color</dt>
+<dd>{{ car.interior_color }}</dd>
+</div>
+</dl>
+</div>
+
+
+</div>
+<div class='vdp-btn-row'>
+<div class='worldwide-btn secondary center shorter read-more-specs'>
+<div class='inner'>
+<span class='btn-front'>View More</span>
+<span class='btn-back'>View More</span>
+</div>
+</div>
+</div>
+</div>
+<div class='info-box'>
+<h5 class='desc-head'>
+Description
+</h5>
+<div class='shortened-desc'>
+<p>Worldwide Vintage Autos is one of the largest classic automobile consignment dealerships in the world. With over 200 vehicles in stock spanning over 80,000 square feet, we have what you are looking for!
+<br />We provide top tier service for both online buyers and in-person transactions. Stemming from selling over 1,000 cars per year, we have become experts in domestic and international shipping and can help you find a shipping company to safely transport your new purchase to your garage.</p>
+
+    <p>ADDITIONAL VEHICLE DETAILS
+<textarea readonly style="height: 800px ;background-color: transparent; border: none; outline: none; padding: 0; margin: 0; width: 100%; resize: none;">{{ car.short_info }}</textarea>
+
+</div>
+</div>
+</div>
+</div>
+<div class='col-sm-12 col-md-4 spec_summary right-show'>
+<div class='price-line'>
+<h2 class='price'>${{ car.price }}</h2>
+<div class='finance-line'>
+<h5 class='monthly-price'>
+${{ car.price_month }}/Month
+<div class='tooltip'>
+Estimated payment based on 10% down over 72 months
+</div>
+</h5>
+</div>
+<div class='default-header'>
+{{ car.shorter_info }}
+</div>
+<dl class='spec-summary'>
+<div class='spec-line stock'>
+<dt>
+Stock
+</dt>
+<dd>{{ car.stock }}</dd>
+</div>
+<div class='spec-line vin'>
+<dt>
+VIN
+</dt>
+<dd>{{ car.vin }}</dd>
+</div>
+<div class='spec-line engine'>
+<dt>
+Engine
+</dt>
+<dd>{{ car.engine }}</dd>
+</div>
+<div class='spec-line trans'>
+<dt>
+Transmission
+</dt>
+<dd>N/A</dd>
+</div>
+<div class='spec-line mileage'>
+<dt class='tooltip-spec'>
+Mileage
+<div class='tooltip'>
+Mileage exempt unless otherwise noted below
+</div>
+</dt>
+<dd>{{ car.mileage }}</dd>
+</div>
+</dl>
+<a data-toggle="modal" data-target="#contact-modal" class="worldwide-block-btn secondary" href="#">Request More Info</a>
+<a class="worldwide-block-btn tertiary" href="tel:(877) 422-1570">(877) 422-1570</a>
+</div>
+
+</div>
+</div>
+<div id='lead-image-overlay'>
+<div aria-hidden='true' class='modal fade' role='dialog' tabindex='-1'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>&times;</span>
+<span class='sr-only'>Close</span>
+</button>
+</div>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<a class='original-image-control prev left' href='#'>
+<div class='arrow-left'>
+<div class='glyphicon glyphicon-chevron-left'></div>
+</div>
+</a>
+<a class='original-image-control next right' href='#'>
+<div class='arrow-right'>
+<div class='glyphicon glyphicon-chevron-right'></div>
+</div>
+</a>
+<div class='modal-lead-image'></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class='worldwide-container recommended-vehicles'>
+<h5 class='center'>
+Recommended Vehicles
+</h5>
+<div class='ft-inventory'>
+
+
+    {% for car in car_list %}
+        {% if forloop.counter <= 1 %}
+<a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="1978 Chevrolet K10" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}"><div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url("{{ car.photo_test_main|safe }}")'>
+<div class='card-banner sale'>
+On Sale
+</div>
+</div>
+<div class='card-bottom'>
+<div class='year-mk'>
+{{ car.year }} {{ car.brand }}
+</div>
+<div class='model'>
+{{ car.model }}
+
+</div>
+<div class='default-header'>
+{{ car.shorter_info }}
+</div>
+<div class='price-stock'>
+<span class='price'>{{ car.price }}</span>
+<span class='stock'>{{ car.stock }}</span>
+</div>
+</div>
+</a>
+{% endif %}
+{% endfor %}
+
+
+  {% for car in car_list %}
+        {% if forloop.counter <= 4 and forloop.counter > 1 %}
+<a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="1978 Chevrolet K10" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}"><div class='vehicle-image lazy' data-src='{{ car.photo1|safe }}' style='background-image: url("{{ car.photo_test_main|safe }}")'>
+</div>
+<div class='card-bottom'>
+<div class='year-mk'>
+{{ car.year }} {{ car.brand }}
+</div>
+<div class='model'>
+{{ car.model }}
+
+</div>
+<div class='default-header'>
+{{ car.shorter_info }}
+</div>
+<div class='price-stock'>
+<span class='price'>{{ car.price }}</span>
+<span class='stock'>{{ car.stock }}</span>
+</div>
+</div>
+</a>
+{% endif %}
+{% endfor %}
+
+
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+     document.getElementById("worldwide-contact").addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log('Form submitted!');
+
+        var name = document.getElementById('contact_name').value;
+        var last = document.getElementById('contact_last_name').value;
+        var email = document.getElementById('contact_email').value;
+        var phone = document.getElementById('contact_phone').value;
+        var country = document.getElementById('contact_country').value;
+        var timeToCall = document.getElementById('contact_time_to_call').value;
+         var carLink = document.getElementById('contact_car_link').value;
+
+
+        var formData = {
+        'name': name,
+        'last': last,
+        'email': email,
+        'phone': phone,
+        'country': country,
+        'timeToCall': timeToCall,
+            'carLink': carLink
+        // Add more form fields as needed
+    };
+
+        // Send the data to Django using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '{% url 'submit_contact_modal_form' %}', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    console.log('Form submitted successfully:', data);
+                    // Add any additional actions you want to perform after successful submission
+                } else {
+                    console.error('Error submitting form:', xhr.statusText);
+                    // Handle errors or display a message to the user
+                }
+            }
+        };
+        xhr.send(JSON.stringify(formData));
+    });
+</script>
+</div>
+<div class='modal fade' id='contact-modal' role='dialog' tabindex='-1' style="z-index: 1050;">
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<form class="form-horizontal contact_form" id="worldwide-contact" role="form" action="{% url 'submit_contact_modal_form' %}" accept-charset="UTF-8" method="post">
+    {% csrf_token %}
+    <input type="hidden" value="13294" name="contact[vehicle_id]" id="contact_vehicle_id" />
+    <input value="Contact Form" type="hidden" name="contact[lead_source_name]" id="contact_lead_source_name" />
+
+    <fieldset>
+        <legend>Contact Details</legend>
+
+        <div class='form-group has-error'>
+            <div class='col-xs-12'>
+                <input placeholder="First Name" class="form-control" required="required" type="text" name="contact[name]" id="contact_name" />
+                <label for="contact_first_name">First name</label>
+            </div>
+        </div>
+
+        <div class='form-group has-error'>
+            <div class='col-xs-12'>
+                <input placeholder="Last Name" class="form-control" required="required" type="text" name="contact[last_name]" id="contact_last_name" />
+                <label for="contact_last_name">Last name</label>
+            </div>
+        </div>
+
+        <div class='form-group has-error'>
+            <div class='col-xs-12'>
+                <input placeholder="Phone Number" class="form-control" type="tel" name="contact[phone]" id="contact_phone" />
+                <label for="contact_phone">Phone</label>
+            </div>
+        </div>
+
+        <div class='form-group has-error'>
+            <div class='col-xs-12'>
+                <input placeholder="Email Address" class="form-control" type="email" name="contact[email]" id="contact_email" />
+                <label for="contact_email">Email</label>
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <label class="sr-only" for="contact_country">Country</label>
+            <div class='col-xs-12'>
+                <select class="form-control drop-down" name="contact[country]" id="contact_country">
+                    <option value="">Your Country</option>
+                    <!-- Add the rest of the country options -->
+                </select>
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <label class="sr-only" for="contact_time_to_call">Time to call</label>
+            <div class='col-xs-12'>
+                <select class="form-control" name="contact[time_to_call]" id="contact_time_to_call">
+                    <option value="">Best Time To Call Me</option>
+                    <option value="any_time">Any Time</option>
+                    <option value="fr9to13">9:00 a.m. - 1:00 p.m.</option>
+                    <option value="fr13to17">1:00 p.m. - 5:00 p.m.</option>
+                    <option value="fr17to20">5:00 p.m. - 8:00 p.m.</option>
+                </select>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class='form-group'>
+        <div class='col-sm-12'>
+            <textarea placeholder="Message" class="form-control" rows="5" name="contact[comment]" id="contact_comment"></textarea>
+        </div>
+    </div>
+
+    <input type="hidden" value="{% url 'car_details' car.id %}" name="contact[car_link]" id="contact_car_link" />
+
+    <div class='form-group'>
+        <div class='col-sm-12'>
+            <div class='invisible-recaptcha-container'></div>
+            <input type="submit" name="commit" value="Send" class="worldwide-simple-btn primary center" data-uw-rm-form="submit">
+        </div>
+    </div>
+</form>
+<div class='contact-success l-flash-success' style='display:none;'>
+Thank you! We will be contacting you soon.
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class='modal fade' id='make-offer-modal' role='dialog' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='deposit-form-header'>
+<div class='year-make-model'>
+{{ car.year }} {{ car.brand }} {{ car.model }}
+</div>
+<div class='spec-line stock'>
+<dt>
+Stock #
+</dt>
+</div>
+<span class='stock'>{{ car.stock }}</span>
+</div>
+<a id='formAnchor115825590' name='form115825590'>
+<script src='https://fs19.formsite.com/include/form/embedManager.js?115825590'></script>
+</a>
+</div>
+</div>
+</div>
+
+<script type='application/ld+json'>
+{
+"@context": "http://schema.org",
+"@type": "Car",
+"name": "{{ car.year }} {{ car.brand }} {{ car.model }}",
+"image": "https://cdn.dealeraccelerate.com/worldwide/1/7410/457357/790x1024/w/1977-chevrolet-k20",
+"manufacturer": "Chevrolet",
+"model": "#&lt;Vehicle:0x00000000147104f8&gt; ",
+"productionDate": "1977",
+"vehicleInteriorColor": "",
+"color": "",
+"description": "",
+"mileageFromOdometer": "{{ car.mileage }}",
+"productID": "Stock# {{ car.stock }}",
+"vehicleIdentificationNumber": "{{ car.vin }}"
+}
+</script>
+
+
+</div>
+</div>
+<div class='modal fade' id='vip-modal' role='dialog' style='bottom:unset' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<h3 class='black centered'>
+Become a VIP
+</h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class='footer'>
+<div class='contact-block'>
+<div class='info-block'>
+<h6>
+Find
+</h6>
+<a href="https://www.google.com/maps/search/Worldwide+Vintage+Autos+4001+Forest+St+Denver+CO+80216">4001 Forest St
+<br>
+Denver CO 80216
+</a></div>
+<div class='info-block'>
+</div>
+<div class='info-block'>
+<h6>
+Follow
+</h6>
+<div class='social-bar'>
+<a target="_blank" title="Facebook" href="https://www.facebook.com/Worldwide-Vintage-Autos-324003677743009/"><div class='social-icon2 social-btn facebook-icon'></div>
+</a><a target="_blank" title="Youtube" href="https://www.youtube.com/user/WWvintageautos"><div class='social-icon4 social-btn youtube-icon'></div>
+</a><a target="_blank" title="Instagram" href="https://www.instagram.com/worldwidevintageautos/"><div class='social-icon5 social-btn instagram-icon'></div>
+</a><a target="_blank" title="Motorious" href="https://buy.motorious.com/inventory/dealer/Worldwide+Vintage+Autos"><div class='social-icon7 social-btn mtrs-icon'></div>
+</a></div>
+
+</div>
+<div class='info-block'>
+<h6>
+Email
+</h6>
+<a href="mailto:sales@worldwidevintageautos.com">sales@worldwidevintageautos.com</a>
+</div>
+</div>
+<div class='image-box'>
+<img src="{% static '/assets/worldwide/bbb-aplus-8ce9bac98c70304cc04424cb4c71e19d.png' %}" alt="Bbb aplus" />
+<img src="{% static '/assets/worldwide/ebay-5star-0a1d256d9c49079086c9976773c0cc2b.png' %}" alt="Ebay 5star" />
+</div>
+<a class="footer-logo" href="/"><img src="{% static '/assets/worldwide/wwva-logo-2a51f46607e6ba3aa4d63140cf33b7e0.png' %}" alt="Wwva logo" />
+</a></div>
+
+<div class='modal fade' id='vip-auto-modal' role='dialog' style='bottom:unset;' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content-container'>
+<button aria-label='Close' class='close' data-dismiss='modal' id='modal-close' type='button'></button>
+<div class='modal-body'>
+<h3 class='black centered'>
+Become a VIP
+</h3>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class='sd-standard-footer'>
+<div class='sd-container'>
+<div class='sd-copy-row'>
+<a title="Privacy Policy" target="_blank" href="https://speeddigital.com/client-privacy-policy/?client=worldwidevintageautos">Privacy Policy</a>
+<a title="Terms and Conditions" target="_blank" href="https://speeddigital.com/terms-and-conditions">Terms and Conditions</a>
+</div>
+<div class='built-by-sd-logo'>
+<a title="Powered by Speed Digital" target="_blank" rel="noopener" href="https://www.speeddigital.com?inbound-traffic">Powered by
+<span>SpeedDigital</span>
+<div class='sd-logo-light-bg'>
+<svg viewBox="0 0 768.19 73.7" xmlns="http://www.w3.org/2000/svg"><path d="m18.08 49.8c-1.57 6.19-2 9-1 9.86.63.73 1.57.83 4.61.83h15.1c2.72 0 3.88-.1 4.82-.94.73-.84 1.57-2.52 2.62-6.81 1-3.46 1-5.25.11-6.19a6.09 6.09 0 0 0 -3-1.15l-20.34-4.2c-5.45-1.15-7.65-2.09-9.75-4.19-3.13-3.01-3.55-7.66-1.45-16.56 1.88-8.45 4.5-12.59 7.44-15.62 3.35-3.26 7.76-4.51 13.31-4.51h23.45c6 0 9.54 1 11.63 3.14 3.36 3.36 3.36 8.49 1 20h-15.95c1.15-6.18 1.26-8.28.42-9.11-.63-.63-1.57-.95-4.82-.95h-13c-2.62 0-3.88.11-4.72.95s-1.47 2.65-2.51 6.41c-.84 3.46-.84 5 0 5.87.52.53 1.15.94 3.14 1.26l20 4.09c5.35 1.15 7.76 2.2 9.75 4.19 3.17 3.15 3.9 7.83 1.6 16.83-2.31 9.11-4.51 13-7.76 16.25s-7.65 4.5-13.42 4.5h-25.9c-5.87 0-9.12-1-11.22-3.14-3.14-3.2-2.93-9.9.32-20.81z" fill="#262626"/><path d="m195.19 73.7h-54.09l18.24-73.38h54.1l-3.36 13.42h-37l-4 15.83h28.62l-3.25 12.79h-28.51l-4.4 17.92h36.9z" fill="#262626"/><path d="m263.46 73.7h-54.1l18.24-73.38h54.1l-3.35 13.42h-37l-4 15.83h28.65l-3.24 12.79h-28.55l-4.4 17.92h36.9z" fill="#262626"/><path d="m327.54.32c10.06 0 15 1.57 18.55 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.21-12.37 27.36-6.29 6.19-13.31 7.55-23.38 7.55h-34.39l18.25-73.38zm-17.82 13.1-11.72 47.07h14.89c5 0 8-.63 10.07-2.72s4.04-5.77 7.83-20.77 3.67-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.32-1.89z" fill="#262626"/><g fill="#fb991c"><path d="m404 .32c10.07 0 15 1.57 18.56 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.17-12.37 27.36-6.29 6.19-13.32 7.55-23.38 7.55h-34.41l18.24-73.38zm-17.82 13.1-11.76 47.07h14.89c5 0 8-.63 10.06-2.72s4.09-5.77 7.87-20.77 3.66-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.33-1.89z"/><path d="m431 73.7 18.2-73.38h17.19l-18.24 73.38z"/><path d="m500.68 46.34 3.14-12.47h32.29c-.31 1.36-1.47 6.28-2 8.07-4.61 18-8.91 23.48-11.74 26.31-4.61 4.61-9 5.45-16.25 5.45h-18.23c-8 0-11.33-1.57-13.42-3.67-4.3-4.29-6.29-12.89-1.05-34.7 5.13-21.07 9.85-26.63 12.79-29.56 4.61-4.62 9-5.45 16.35-5.45h18.77c8 0 11.43 1.46 13.53 3.56 3.25 3.25 4.61 8.91 2.72 20.55h-16.14c1.36-7.34.73-8.91-.11-9.75-.63-.63-1.78-1-5.24-1h-12.48c-3.35 0-4.72.42-5.66 1.36s-2.94 3.46-7.44 22-3.57 21.15-2.51 22.19c.74.74 1.79 1.05 5.24 1.05h12.58c3.46 0 4.83-.42 5.77-1.36s2.1-2.62 4.93-12.58z"/><path d="m542.32 73.7 18.24-73.38h17.19l-18.24 73.38z"/><path d="m625.36 13.84-14.88 59.86h-17.09l14.78-59.86h-21.91l3.46-13.52h61.22l-3.46 13.52z"/><path d="m691 0c5.56 0 6.29 1.36 6.81 6.92l5.35 66.78h-17l-1.05-18.34h-25.03l-9.85 18.34h-18l39.7-68.87c2.31-4 3.25-4.83 7.23-4.83zm-24.1 42.67h17.71l-1.46-27.36h-1.37z"/><path d="m734.12 60.28h34.07l-3.25 13.42h-51.26l18.24-73.38h17.08z"/></g><path d="m122.19 16.46 4.01-16.14h-37.65l-18.24 73.38h16.98l6.21-24.98h20.66l4.01-16.14h-20.66l4.01-16.12h20.66l-4.01 16.15h20.67l4.01-16.15z" fill="#262626"/></svg>
+
+</div>
+<div class='sd-logo-dark-bg'>
+<svg viewBox="0 0 768.19 73.7" xmlns="http://www.w3.org/2000/svg"><path d="m18.08 49.8c-1.57 6.19-2 9-1 9.86.63.73 1.57.83 4.61.83h15.1c2.72 0 3.88-.1 4.82-.94.73-.84 1.57-2.52 2.62-6.81 1-3.46 1-5.25.11-6.19a6.09 6.09 0 0 0 -3-1.15l-20.34-4.2c-5.45-1.15-7.65-2.09-9.75-4.19-3.13-3.01-3.55-7.66-1.45-16.56 1.88-8.45 4.5-12.59 7.44-15.62 3.35-3.26 7.76-4.51 13.31-4.51h23.45c6 0 9.54 1 11.63 3.14 3.36 3.36 3.36 8.49 1 20h-15.95c1.15-6.18 1.26-8.28.42-9.11-.63-.63-1.57-.95-4.82-.95h-13c-2.62 0-3.88.11-4.72.95s-1.47 2.65-2.51 6.41c-.84 3.46-.84 5 0 5.87.52.53 1.15.94 3.14 1.26l20 4.09c5.35 1.15 7.76 2.2 9.75 4.19 3.17 3.15 3.9 7.83 1.6 16.83-2.31 9.11-4.51 13-7.76 16.25s-7.65 4.5-13.42 4.5h-25.9c-5.87 0-9.12-1-11.22-3.14-3.14-3.2-2.93-9.9.32-20.81z" fill="#fff"/><path d="m195.19 73.7h-54.09l18.24-73.38h54.1l-3.36 13.42h-37l-4 15.83h28.62l-3.25 12.79h-28.51l-4.4 17.92h36.9z" fill="#fff"/><path d="m263.46 73.7h-54.1l18.24-73.38h54.1l-3.35 13.42h-37l-4 15.83h28.65l-3.24 12.79h-28.55l-4.4 17.92h36.9z" fill="#fff"/><path d="m327.54.32c10.06 0 15 1.57 18.55 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.21-12.37 27.36-6.29 6.19-13.31 7.55-23.38 7.55h-34.39l18.25-73.38zm-17.82 13.1-11.72 47.07h14.89c5 0 8-.63 10.07-2.72s4.04-5.77 7.83-20.77 3.67-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.32-1.89z" fill="#fff"/><g fill="#fb991c"><path d="m404 .32c10.07 0 15 1.57 18.56 5.24 5.56 5.45 6 15.62 1.68 33.23-4.09 16.46-8.28 23.17-12.37 27.36-6.29 6.19-13.32 7.55-23.38 7.55h-34.41l18.24-73.38zm-17.82 13.1-11.76 47.07h14.89c5 0 8-.63 10.06-2.72s4.09-5.77 7.87-20.77 3.66-19.5 1.46-21.7c-1.57-1.47-3.56-1.89-9.33-1.89z"/><path d="m431 73.7 18.2-73.38h17.19l-18.24 73.38z"/><path d="m500.68 46.34 3.14-12.47h32.29c-.31 1.36-1.47 6.28-2 8.07-4.61 18-8.91 23.48-11.74 26.31-4.61 4.61-9 5.45-16.25 5.45h-18.23c-8 0-11.33-1.57-13.42-3.67-4.3-4.29-6.29-12.89-1.05-34.7 5.13-21.07 9.85-26.63 12.79-29.56 4.61-4.62 9-5.45 16.35-5.45h18.77c8 0 11.43 1.46 13.53 3.56 3.25 3.25 4.61 8.91 2.72 20.55h-16.14c1.36-7.34.73-8.91-.11-9.75-.63-.63-1.78-1-5.24-1h-12.48c-3.35 0-4.72.42-5.66 1.36s-2.94 3.46-7.44 22-3.57 21.15-2.51 22.19c.74.74 1.79 1.05 5.24 1.05h12.58c3.46 0 4.83-.42 5.77-1.36s2.1-2.62 4.93-12.58z"/><path d="m542.32 73.7 18.24-73.38h17.19l-18.24 73.38z"/><path d="m625.36 13.84-14.88 59.86h-17.09l14.78-59.86h-21.91l3.46-13.52h61.22l-3.46 13.52z"/><path d="m691 0c5.56 0 6.29 1.36 6.81 6.92l5.35 66.78h-17l-1.05-18.34h-25.03l-9.85 18.34h-18l39.7-68.87c2.31-4 3.25-4.83 7.23-4.83zm-24.1 42.67h17.71l-1.46-27.36h-1.37z"/><path d="m734.12 60.28h34.07l-3.25 13.42h-51.26l18.24-73.38h17.08z"/></g><path d="m122.19 16.46 4.01-16.14h-37.65l-18.24 73.38h16.98l6.21-24.98h20.66l4.01-16.14h-20.66l4.01-16.12h20.66l-4.01 16.15h20.67l4.01-16.15z" fill="#fff"/></svg>
+
+</div>
+</a></div>
+</div>
+</div>
+
+</body>
+</html>
