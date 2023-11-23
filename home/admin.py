@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Car, CarPhoto
+from .models import Car, CarPhoto, CarSold
 
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('brand', 'model', 'price', 'year','short_info')
+    list_display = ('brand', 'model', 'price', 'year', 'short_info')
     list_filter = ('brand', 'model', 'year')
     search_fields = ('brand', 'model')
 
@@ -18,8 +18,10 @@ class CarAdmin(admin.ModelAdmin):
 
 admin.site.register(Car, CarAdmin)
 
+
 class CarPhotoAdmin(admin.ModelAdmin):
     list_display = ['car', 'display_photos']
+    search_fields = ['photo1']
 
     def display_photos(self, obj):
         return obj.photo1[:50]
@@ -43,3 +45,20 @@ class CarPhotoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CarPhoto, CarPhotoAdmin)
+
+
+class CarSoldAdmin(admin.ModelAdmin):
+    list_display = ('brand', 'model', 'price', 'year', 'short_info')
+    list_filter = ('brand', 'model', 'year')
+    search_fields = ('brand', 'model', 'photo_test_main')  # Added 'photo_test_main' to search fields
+
+    actions = ['delete_selected_cars']
+
+    def delete_selected_cars(self, request, queryset):
+        for car in queryset:
+            car.delete()
+
+    delete_selected_cars.short_description = "Delete selected cars"
+
+
+admin.site.register(CarSold, CarSoldAdmin)

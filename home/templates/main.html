@@ -720,7 +720,7 @@ Sort By
 
 
 
-{% for car in car_list %}
+{% for car in car_list|slice:":36" %}
 <a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}">
     <div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url({{ car.photo_test_main|safe }})'></div>
     <div class='card-bottom'>

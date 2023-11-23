@@ -11,7 +11,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 
 
-
 # Create your views here.
 @csrf_exempt
 def submit_form(request):
@@ -54,7 +53,8 @@ def submit_contact_modal_form(request):
         recipient_list = 'sales@masterpiecevintage.com'  # Replace with the recipient's email address
         # Process or store the form data as needed.
 
-        print(f'Name: {name}, Last Name: {last}, Phone: {phone}, Email: {email}, Country: {country}, Time to Call: {time_to_call}, Comment: {comment}, Car Link: {car_link}')
+        print(
+            f'Name: {name}, Last Name: {last}, Phone: {phone}, Email: {email}, Country: {country}, Time to Call: {time_to_call}, Comment: {comment}, Car Link: {car_link}')
 
         send_email(from_email, 'numberone123123ana.', recipient_list, subject, message)
         # You can include additional logic to handle the form data, such as sending emails or storing in a database.
@@ -127,8 +127,6 @@ def index(request):
     return render(request, 'pages/index.html', {'brands': brands, 'cars_by_brand': cars_by_brand, 'car_list': cars})
 
 
-
-
 def feedbackurl(request):
     cars = Car.objects.all()
 
@@ -142,7 +140,6 @@ def feedbackurl(request):
         if brand not in cars_by_brand:
             cars_by_brand[brand] = []
         cars_by_brand[brand].append(car)
-
 
     # Get a list of all unique brand names
     brands = list(cars_by_brand.keys())
@@ -175,8 +172,6 @@ def copyindex(request):
     # Create a dictionary to store cars grouped by brand
     cars_by_brand = {}
 
-
-
     for car in cars:
         brand = car.brand
 
@@ -184,11 +179,8 @@ def copyindex(request):
             cars_by_brand[brand] = []
         cars_by_brand[brand].append(car)
 
-
-
     # Get a list of all unique brand names
     brands = list(cars_by_brand.keys())
-
 
     return render(request, 'main.html',
                   {'brands': brands, 'cars_by_brand': cars_by_brand, 'car_list': cars})
@@ -218,24 +210,64 @@ def car_details(request, car_id):
         # You can return a 404 error page or a custom error message
         return render(request, 'car_not_found.html')
 
-    return render(request, 'car_details.html', {'car': car, 'car_photos': car_photos, 'photo_count': photo_count, 'car_list' : cars})
+    return render(request, 'car_details.html',
+                  {'car': car, 'car_photos': car_photos, 'photo_count': photo_count, 'car_list': cars})
 
 
 def contact(request):
     return render(request, 'contact.html')
 
+
 def car_finder(request):
     return render(request, 'car-finder.html')
+
 
 def blog(request):
     return render(request, 'news.html')
 
+
 def sold_cars(request):
-    return render(request, 'sold.html')
+    cars = Car.objects.all()
+    cars_by_brand = {}  # Your existing logic for grouping by brand
+
+    # Extract parameters from the query string
+    price_gteq = request.GET.get('q[price_gteq]')
+    price_lteq = request.GET.get('q[price_lteq]')
+    make_eq = request.GET.get('q[make_eq]')
+    search_cont = request.GET.get('q[ftx_search_cont]')
+    year_filter = request.GET.get('q[year_eq]')
+
+    # Apply filters based on the extracted parameters
+    if price_gteq and price_lteq:
+        cars = cars.filter(price__gte=price_gteq, price__lte=price_lteq)
+
+    if make_eq:
+        cars = cars.filter(brand=make_eq)
+
+    if search_cont:
+        # Adjust this based on your model fields for searching
+        cars = cars.filter(Q(brand__icontains=search_cont) | Q(model__icontains=search_cont))
+
+    if year_filter:
+        # Adjust this based on your model field for the year
+        cars = cars.filter(year=year_filter)
+
+    # Your existing logic for grouping by brand
+    for car in cars:
+        brand = car.brand
+        if brand not in cars_by_brand:
+            cars_by_brand[brand] = []
+        cars_by_brand[brand].append(car)
+
+    brands = list(cars_by_brand.keys())
+
+    # Your existing logic for rendering the template
+    return render(request, 'sold.html', {'brands': brands, 'cars_by_brand': cars_by_brand, 'car_list': cars})
+
 
 def testimonials(request):
     return render(request, 'testimonials.html')
 
+
 def about(request):
     return render(request, 'about.html')
-
