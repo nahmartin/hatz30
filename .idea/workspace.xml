@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="try 30" />
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="try 30">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vehicles/15356/1978-chevrolet-k10.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/vehicles/15356/1978-chevrolet-k10.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,6 +144,7 @@
       <workItem from="1700675126676" duration="995000" />
       <workItem from="1700676144221" duration="21000" />
       <workItem from="1700676194002" duration="50000" />
+      <workItem from="1700676255353" duration="5717000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />

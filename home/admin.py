@@ -17,4 +17,29 @@ class CarAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Car, CarAdmin)
-admin.site.register(CarPhoto)
+
+class CarPhotoAdmin(admin.ModelAdmin):
+    list_display = ['car', 'display_photos']
+
+    def display_photos(self, obj):
+        return obj.photo1[:50]
+
+    display_photos.short_description = 'Photos'
+
+    def save_model(self, request, obj, form, change):
+        # Split the input by lines and create separate instances for each photo link
+        photo_links = form.cleaned_data['photo1'].split('\n')
+        for link in photo_links:
+            if link.strip():  # Ignore empty lines
+                link_stripped = link.strip()
+                if not CarPhoto.objects.filter(photo1=link_stripped).exists():
+                    car_photo = CarPhoto(car=obj.car, photo1=link_stripped)
+                    car_photo.save()
+                else:
+                    self.message_user(request, f'The photo link "{link_stripped}" already exists in the database.',
+                                      level='WARNING')
+
+        super().save_model(request, obj, form, change)
+
+
+admin.site.register(CarPhoto, CarPhotoAdmin)
