@@ -298,6 +298,14 @@ color: #fff;
     // Other form fields can be added in a similar manner
 
     }
+    document.addEventListener("DOMContentLoaded", function () {
+    // Your code here
+    setTimeout(function () {
+        openVIPModal();
+        console.log("dasdasas");
+    }, 500);
+});
+
 </script>
 <a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal()">
     <div class='inner'>
@@ -386,6 +394,7 @@ color: #fff;
 </nav>
 </div>
 <a class="worldwide-mobile-logo" href="/"></a>
+<a class="worldwide-mobile-phone" href="tel:(877) 422-1570"></a>
 </div>
 </header>
 <div id='worldwide-menu-toggle'>
@@ -491,7 +500,7 @@ color: #fff;
     <script>
          setTimeout(function () {
     openVIPModal1();
-}, 30500);
+}, 500);
     function openVIPModal1() {
         // Show the modal with a smooth fade-in animation
         const modal = document.getElementById('vip-modal1');
@@ -554,7 +563,7 @@ color: #fff;
     });
 
     function submitVIPForm1() {
-        // Handle form submission logic here
+        // Handle form submission logic her`e
         console.log('Form submitt123123312ed!');
         // You can add the logic to send the form data to your server or perform any other actions.
         // Replace the following line with your actual form submission logic.
