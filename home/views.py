@@ -107,8 +107,12 @@ def index(request):
         cars = cars.filter(brand=make_eq)
 
     if search_cont:
-        # Adjust this based on your model fields for searching
-        cars = cars.filter(Q(brand__icontains=search_cont) | Q(model__icontains=search_cont))
+        # Try to filter by stock, assuming stock is alphanumeric
+        cars = cars.filter(Q(stock__icontains=search_cont))
+
+        # If no results for stock, fallback to searching within brand or model fields
+        if not cars.exists():
+            cars = cars.filter(Q(brand__icontains=search_cont) | Q(model__icontains=search_cont))
 
     if year_filter:
         # Adjust this based on your model field for the year
