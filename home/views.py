@@ -39,6 +39,7 @@ def submit_form(request):
 @csrf_exempt
 def submit_contact_modal_form(request):
     if request.method == 'POST':
+        print('View reached!')
         name = request.POST.get('contact[name]')
         last = request.POST.get('contact[last_name]')
         phone = request.POST.get('contact[phone]')
