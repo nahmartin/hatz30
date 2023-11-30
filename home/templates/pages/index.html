@@ -479,7 +479,7 @@ color: #fff;
     </a>
 <div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii1" onclick="closeVIPModal1()"></div>
 <div id="vip-modal1" class="modal" style="z-index: 140">
-<button style="position: absolute; top: 15px; right: 5px; z-index: 390; color: white; width: 28px; height: 28px; background-color: #e73113; border: none; display: flex; justify-content: center; align-items: center; font-size: 20px;" onclick="closeVIPModal1()">
+<button style="position: absolute; top: 15px; right: 5px; z-index: 410; color: white; width: 28px; height: 28px; background-color: #e73113; border: none; display: flex; justify-content: center; align-items: center; font-size: 20px;" onclick="closeVIPModal1()">
     &#10006;
 </button>
     <div class="modal-content" style="overflow-y: auto; z-index: 400;">
@@ -553,19 +553,29 @@ color: #fff;
 
 
     document.getElementById("vip-form1").addEventListener("submit", function (e) {
-        e.preventDefault();
-         console.log('Form submitted!');
+    e.preventDefault();
+
+    // Get the values of the form fields
     var name = document.getElementById('name').value;
     var last = document.getElementById('last').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
- var formData = {
+
+    // Check if any field is empty
+    if (name === '' || last === '' || email === '' || phone === '') {
+        alert('Please fill in all fields before submitting.');
+        return; // Stop the form submission
+    }
+
+    // If all fields are filled, continue with the form submission logic
+    var formData = {
         'name': name,
         'last': last,
         'email': email,
         'phone': phone,
         // Add more form fields as needed
     };
+
     // Send the data to Django using AJAX
     $.ajax({
         type: 'POST',
@@ -581,7 +591,8 @@ color: #fff;
             // Handle errors or display a message to the user
         }
     });
-    });
+});
+
 
     function submitVIPForm1() {
         // Handle form submission logic here

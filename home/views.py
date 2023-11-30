@@ -88,10 +88,9 @@ def submit_carfinder_modal_form(request):
     # Return a JSON response for invalid requests.
     return JsonResponse({'message': 'Invalid request'})
 
-
-from django.db.models import Q
-
+# views.py
 def index(request):
+    # Fetch all cars initially
     cars = Car.objects.all()
     cars_by_brand = {}
 
@@ -107,27 +106,27 @@ def index(request):
         cars = cars.filter(price__gte=price_gteq, price__lte=price_lteq)
 
     if make_eq:
-        # Make the brand filter case-insensitive
-        cars = cars.filter(brand__icontains=make_eq)
+        # Use __iexact for case-insensitive exact matching
+        cars = cars.filter(brand__iexact=make_eq)
 
     if search_cont:
-        # Split the search term into individual words
-        search_terms = search_cont.split()
-
-        # Use Q objects to combine filters for each search term
+        # Use Q objects to create OR conditions for each search term
         search_q = Q()
-        for term in search_terms:
-            # Specifically match "Ford Mustang" in the model
-            search_q |= Q(brand__icontains='Ford') & Q(model__icontains='Mustang') | Q(model__icontains=term) | Q(year__icontains=term) | Q(stock__icontains=term)
+        for term in search_cont.split():
+            search_q |= (
+                Q(brand__icontains=term) |
+                Q(model__icontains=term) |
+                Q(year__icontains=term) |
+                Q(stock__icontains=term)
+            )
 
-        # Apply the combined filter
+        # Apply the combined OR conditions to filter the cars
         cars = cars.filter(search_q)
 
     if year_filter:
-        # Adjust this based on your model field for the year
         cars = cars.filter(year=year_filter)
 
-    # Your existing logic for grouping by brand
+    # Grouping by brand
     for car in cars:
         brand = car.brand
         if brand not in cars_by_brand:
@@ -138,7 +137,6 @@ def index(request):
 
     # Your existing logic for rendering the template
     return render(request, 'pages/index.html', {'brands': brands, 'cars_by_brand': cars_by_brand, 'car_list': cars})
-
 
 def feedbackurl(request):
     cars = Car.objects.all()
