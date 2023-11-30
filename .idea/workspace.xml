@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="pixel api enabled?">
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="update , fixed phone and search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/car_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car-finder.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car-finder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sold.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sold.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +152,7 @@
       <workItem from="1700850950771" duration="12601000" />
       <workItem from="1701192104991" duration="9831000" />
       <workItem from="1701277612811" duration="5384000" />
-      <workItem from="1701366316526" duration="5039000" />
+      <workItem from="1701366316526" duration="5247000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -224,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701285502279</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update , fixed phone and search">
+      <option name="closed" value="true" />
+      <created>1701371650932</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701371650932</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +262,7 @@
     <MESSAGE value="pushed withc cars" />
     <MESSAGE value="pushed withc cars, fixed search" />
     <MESSAGE value="pixel api enabled?" />
-    <option name="LAST_COMMIT_MESSAGE" value="pixel api enabled?" />
+    <MESSAGE value="update , fixed phone and search" />
+    <option name="LAST_COMMIT_MESSAGE" value="update , fixed phone and search" />
   </component>
 </project>
