@@ -89,9 +89,11 @@ def submit_carfinder_modal_form(request):
     return JsonResponse({'message': 'Invalid request'})
 
 
+from django.db.models import Q
+
 def index(request):
     cars = Car.objects.all()
-    cars_by_brand = {}  # Your existing logic for grouping by brand
+    cars_by_brand = {}
 
     # Extract parameters from the query string
     price_gteq = request.GET.get('q[price_gteq]')
@@ -105,16 +107,21 @@ def index(request):
         cars = cars.filter(price__gte=price_gteq, price__lte=price_lteq)
 
     if make_eq:
-        cars = cars.filter(brand=make_eq)
+        # Make the brand filter case-insensitive
+        cars = cars.filter(brand__icontains=make_eq)
 
     if search_cont:
-        # Combine brand, model, and year search in a single query
-        cars = cars.filter(
-            Q(brand__icontains=search_cont) |
-            Q(model__icontains=search_cont) |
-            Q(year__icontains=search_cont) |
-            Q(stock__icontains=search_cont)
-        )
+        # Split the search term into individual words
+        search_terms = search_cont.split()
+
+        # Use Q objects to combine filters for each search term
+        search_q = Q()
+        for term in search_terms:
+            # Specifically match "Ford Mustang" in the model
+            search_q |= Q(brand__icontains='Ford') & Q(model__icontains='Mustang') | Q(model__icontains=term) | Q(year__icontains=term) | Q(stock__icontains=term)
+
+        # Apply the combined filter
+        cars = cars.filter(search_q)
 
     if year_filter:
         # Adjust this based on your model field for the year
