@@ -341,15 +341,15 @@ color: #fff;
 <a class="dropdown-toggle" href="#0">Inventory
 </a><ul class='dropdown-menu'>
 <li>
-<a href="/#">Current Inventory</a>
+<a href="{% url 'index' %}">Current Inventory</a>
 </li>
 <li>
-<a href="/vehicles/sold">Sold Vehicles</a>
+<a href="{% url 'sold' %}">Sold Vehicles</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="/">Current Inventory</a>
+<a href="{% url 'index' %}">Current Inventory</a>
 </li>
 <li>
 <a href="{% url 'contact' %}">Contact</a>
@@ -412,12 +412,12 @@ color: #fff;
 <a class="dropdown-toggle" href="#0">Inventory
 </a><ul class='dropdown-menu'>
 <li>
-<a href="/vehicles/sold">Sold Vehicles</a>
+<a href="{% url 'sold' %}">Sold Vehicles</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="/#">Current Inventory</a>
+<a href="{% url 'index' %}">Current Inventory</a>
 </li>
 <li>
 <a href="{% url 'contact' %}">Contact</a>
