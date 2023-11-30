@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="update , fixed phone and search">
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="fiiorer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/car-finder.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car-finder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/sold.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sold.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +147,7 @@
       <workItem from="1700850950771" duration="12601000" />
       <workItem from="1701192104991" duration="9831000" />
       <workItem from="1701277612811" duration="5384000" />
-      <workItem from="1701366316526" duration="5247000" />
+      <workItem from="1701366316526" duration="5734000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -234,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701371650932</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fiiorer">
+      <option name="closed" value="true" />
+      <created>1701371874406</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701371874406</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +266,7 @@
     <MESSAGE value="pushed withc cars, fixed search" />
     <MESSAGE value="pixel api enabled?" />
     <MESSAGE value="update , fixed phone and search" />
-    <option name="LAST_COMMIT_MESSAGE" value="update , fixed phone and search" />
+    <MESSAGE value="fiiorer" />
+    <option name="LAST_COMMIT_MESSAGE" value="fiiorer" />
   </component>
 </project>
