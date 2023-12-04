@@ -34,7 +34,7 @@ DEBUG = 'False'
 ALLOWED_HOSTS = ['*']
 
 # Add here your deployment HOSTS
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085', 'https://worldwidevintageautos.org', 'https://worldwidevintageauto.org']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
