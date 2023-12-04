@@ -249,12 +249,6 @@ color: #fff;
     </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    // Your code here
-    setTimeout(function () {
-        openVIPModal();
-    }, 30500);
-});
 
     function openVIPModal() {
         // Show the modal with a smooth fade-in animation
@@ -851,6 +845,30 @@ Sort By
         </a>
     {% endif %}
 {% endfor %}
+{% for car in car_list %}
+    {% if car.id == 212 %}
+        <a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}">
+            <!-- Your car display content here -->
+            <div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url({{ car.photo_test_main|safe }})'></div>
+            <div class='card-bottom'>
+                <div class='year-mk'>
+                    {{ car.year }} {{ car.brand }}
+                </div>
+                <div class='model'>
+                    {{ car.model }}
+                </div>
+                <div class='default-header'>
+                    {{ car.shorter_info }}
+                </div>
+                <div class='price-stock'>
+                    <span class='price'>${{ car.price }}</span>
+                    <span class='stock'>{{ car.stock }}</span>
+                </div>
+            </div>
+        </a>
+    {% endif %}
+{% endfor %}
+
 
 {% for car in car_list %}
     {% if forloop.counter >= 5 %}
