@@ -805,11 +805,56 @@ Sort By
 </div>
 <div class='worldwide-grid vlp-grid'>
 
-
-
-
+{% for car in car_list %}
+    {% if forloop.counter <= 4 %}
+        <a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}">
+            <div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url({{ car.photo_test_main|safe }})'></div>
+            <div class='card-bottom'>
+                <div class='year-mk'>
+                    {{ car.year }} {{ car.brand }}
+                </div>
+                <div class='model'>
+                    {{ car.model }}
+                </div>
+                <div class='default-header'>
+                    {{ car.shorter_info }}
+                </div>
+                <div class='price-stock'>
+                    <span class='price'>${{ car.price }}</span>
+                    <span class='stock'>{{ car.stock }}</span>
+                </div>
+            </div>
+        </a>
+    {% endif %}
+{% endfor %}
 
 {% for car in car_list %}
+    {% if car.id == 211 %}
+        <a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}">
+            <!-- Your car display content here -->
+            <div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url({{ car.photo_test_main|safe }})'></div>
+            <div class='card-bottom'>
+                <div class='year-mk'>
+                    {{ car.year }} {{ car.brand }}
+                </div>
+                <div class='model'>
+                    {{ car.model }}
+                </div>
+                <div class='default-header'>
+                    {{ car.shorter_info }}
+                </div>
+                <div class='price-stock'>
+                    <span class='price'>${{ car.price }}</span>
+                    <span class='stock'>{{ car.stock }}</span>
+                </div>
+            </div>
+        </a>
+    {% endif %}
+{% endfor %}
+
+{% for car in car_list %}
+    {% if forloop.counter >= 5 %}
+        {% if forloop.counter < 134 %}
     {% if forloop.counter <= 36 or forloop.counter > 46 %}
         <a title="{{ car.year }} {{ car.brand }} {{ car.model }}" alt="{{ car.year }} {{ car.brand }} {{ car.model }}" class="worldwide-inventory-item vlp-item" href="{% url 'car_details' car.id %}">
             <div class='vehicle-image lazy' data-src='{{ car.photo_test_main|safe }}' style='background-image: url({{ car.photo_test_main|safe }})'></div>
@@ -829,6 +874,8 @@ Sort By
                 </div>
             </div>
         </a>
+    {% endif %}
+    {% endif %}
     {% endif %}
 {% endfor %}
 
