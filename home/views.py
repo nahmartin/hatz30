@@ -25,7 +25,7 @@ def submit_form(request):
         recipient_list = 'sales@masterpiecevintage.com'  # Replace with the recipient's email address
 
         # Call the send_email function to send the email
-        send_email(from_email, 'numberone123123ana.', recipient_list, subject, message)
+        send_email(from_email, 'numberone123123.', recipient_list, subject, message)
 
         # Process or store the data as needed.
 
@@ -57,7 +57,7 @@ def submit_contact_modal_form(request):
         print(
             f'Name: {name}, Last Name: {last}, Phone: {phone}, Email: {email}, Country: {country}, Time to Call: {time_to_call}, Comment: {comment}, Car Link: {car_link}')
 
-        send_email(from_email, 'numberone123123ana.', recipient_list, subject, message)
+        send_email(from_email, 'numberone123123.', recipient_list, subject, message)
         # You can include additional logic to handle the form data, such as sending emails or storing in a database.
 
         # Return a JSON response with a success message.
@@ -79,7 +79,7 @@ def submit_carfinder_modal_form(request):
 
         print(f'Name: {name}, Email: {email}, Message: {message}')
 
-        send_email(from_email, 'numberone123123ana.', recipient_list, subject, message)
+        send_email(from_email, 'numberone123123.', recipient_list, subject, message)
         # You can include additional logic to handle the form data, such as sending emails or storing in a database.
 
         # Return a JSON response with a success message.
@@ -168,7 +168,7 @@ def feedbackurl(request):
         recipient_list = 'sales@masterpiecevintage.com'  # Replace with the recipient's email address
 
         # Call the send_email function to send the email
-        send_email(from_email, 'numberone123123ana.', recipient_list, subject, email_message)
+        send_email(from_email, 'numberone123123.', recipient_list, subject, email_message)
 
         # Return a JSON response with a success message.
         return JsonResponse({'message': 'Feedback submitted successfully'})
