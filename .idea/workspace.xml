@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="reveoke this modification after...">
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="chenged vin on 2 chevelles 1966 blue color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car-finder.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car-finder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sold.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sold.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +157,8 @@
       <workItem from="1701366316526" duration="14436000" />
       <workItem from="1701449878368" duration="2853000" />
       <workItem from="1701709736090" duration="9043000" />
-      <workItem from="1701797671800" duration="1861000" />
+      <workItem from="1701797671800" duration="5286000" />
+      <workItem from="1702417922288" duration="203000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -312,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701800108603</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="chenged vin on 2 chevelles 1966 blue color">
+      <option name="closed" value="true" />
+      <created>1701801791533</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701801791533</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +362,7 @@
     <MESSAGE value="fixed .org problems" />
     <MESSAGE value="added a car for" />
     <MESSAGE value="reveoke this modification after..." />
-    <option name="LAST_COMMIT_MESSAGE" value="reveoke this modification after..." />
+    <MESSAGE value="chenged vin on 2 chevelles 1966 blue color" />
+    <option name="LAST_COMMIT_MESSAGE" value="chenged vin on 2 chevelles 1966 blue color" />
   </component>
 </project>
