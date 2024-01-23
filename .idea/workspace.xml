@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="chenged vin on 2 chevelles 1966 blue color">
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="chenged vin on 2 chevelles 1966 blue color , changed intercom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/car-finder.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car-finder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/car_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/sold.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sold.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +155,10 @@
       <workItem from="1702485329792" duration="245000" />
       <workItem from="1702492307504" duration="169000" />
       <workItem from="1702492495427" duration="63000" />
-      <workItem from="1702558320158" duration="232000" />
+      <workItem from="1702558320158" duration="473000" />
+      <workItem from="1705870073545" duration="380000" />
+      <workItem from="1705871017551" duration="897000" />
+      <workItem from="1706003628769" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -332,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701801791533</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="chenged vin on 2 chevelles 1966 blue color , changed intercom">
+      <option name="closed" value="true" />
+      <created>1702558573148</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702558573148</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +371,7 @@
     <MESSAGE value="added a car for" />
     <MESSAGE value="reveoke this modification after..." />
     <MESSAGE value="chenged vin on 2 chevelles 1966 blue color" />
-    <option name="LAST_COMMIT_MESSAGE" value="chenged vin on 2 chevelles 1966 blue color" />
+    <MESSAGE value="chenged vin on 2 chevelles 1966 blue color , changed intercom" />
+    <option name="LAST_COMMIT_MESSAGE" value="chenged vin on 2 chevelles 1966 blue color , changed intercom" />
   </component>
 </project>
