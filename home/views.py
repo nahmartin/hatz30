@@ -18,9 +18,10 @@ def submit_form(request):
         name = request.POST.get('name')
         last = request.POST.get('last')
         phone = request.POST.get('phone')
+        email = request.POST.get('email')
         print(f'Name: {name}, Phone: {phone}, last name: {last}')
         subject = 'New Client'
-        message = f'Name: {name}\nPhone: {phone}\nLast name: {last}'
+        message = f'Name: {name}\nPhone: {phone}\nLast name: {last}\nEamil: {email}'
         from_email = 'sales@masterpiecevintage.com'  # Use your Titan Mail email address
         recipient_list = 'sales@masterpiecevintage.com'  # Replace with the recipient's email address
 

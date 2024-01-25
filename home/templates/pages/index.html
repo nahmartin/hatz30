@@ -257,7 +257,9 @@ color: #fff;
     </style>
 
 <script>
-
+setTimeout(function () {
+    openVIPModal();
+}, 30);
     function openVIPModal() {
         // Show the modal with a smooth fade-in animation
         const modal = document.getElementById('vip-modal');
@@ -473,54 +475,7 @@ color: #fff;
 
 }
 </style>
-<a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal1()">
-        <div class='inner'>
-<span class='btn-front'>VIP list</span>
-<span class='btn-back'>Join Now</span>
-        </div>
-    </a>
-<div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii1" onclick="closeVIPModal1()"></div>
-<div id="vip-modal1" class="modal" style="z-index: 140">
-<button style="position: absolute; top: 15px; right: 5px; z-index: 410; color: white; width: 28px; height: 28px; background-color: #e73113; border: none; display: flex; justify-content: center; align-items: center; font-size: 20px;" onclick="closeVIPModal1()">
-    &#10006;
-</button>
-    <div class="modal-content" style="overflow-y: auto; z-index: 400;">
-        <button aria-label="Close" class="close" data-dismiss="modal" id="modal-close" type="button" onclick="closeVIPModal1()"></button>
-        <h3 class="black centered">Become a VIP</h3>
-        <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px;">
-            <p class="col-1">1. Be the first to hear about vehicles in our inventory BEFORE they hit the market.</p>
-            <p class="col-1">2. Receive a 72-hour exclusive window with the FIRST OPPORTUNITY to buy.</p>
-            <p class="col-1">3. Receive discounted VIP pricing</p>
-            <p class="col-1">4. Not receive other emails or solicitations.</p>
-        </div>
-        <!-- Your form content goes here -->
-        <form id="vip-form1" method="post" action="{% url 'submit_form' %}">
-            <div>
-                {% csrf_token %}
-            </div>
-            <div class="form-group">
-                <label for="name" class="label1">First Name:</label>
-                <input type="text" id="name" name="name" class="form-control input1">
-            </div>
-            <div class="form-group">
-                <label for="last" class="label1">Last Name:</label>
-                <input type="text" id="last" name="last" class="form-control input1">
-            </div>
-            <div class="form-group">
-                <label for="email" class="label1">Email:</label>
-                <input type="email" id="email" name="email" class="form-control input1">
-            </div>
-            <div class="form-group">
-                <label for="phone"class="label1">Phone Number:</label>
-                <input type="text" id="phone" name="phone" class="form-control input1">
-            </div>
-
-            <!-- Add more form fields as needed -->
-            <button type="submit" id="submit_button" onclick="closeVIPModal1()">Submit now!</button>
-        </form>
-    </div>
-
-    <script>
+     <script>
          setTimeout(function () {
     openVIPModal1();
 }, 30500);
@@ -563,37 +518,39 @@ color: #fff;
     var phone = document.getElementById('phone').value;
 
     // Check if any field is empty
-    if (name === '' || last === '' || email === '' || phone === '') {
-        alert('Please fill in all fields before submitting.');
-        return; // Stop the form submission
+    if (name && last && email && phone) {
+        // If all fields are filled, continue with the form submission logic
+        var formData = {
+            'name': name,
+            'last': last,
+            'email': email,
+            'phone': phone,
+            // Add more form fields as needed
+        };
+
+        // Send the data to Django using AJAX
+        $.ajax({
+            type: 'POST',
+            url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                console.log('Form submitted successfully:', data);
+                // Add any additional actions you want to perform after successful submission
+
+                // Close the form after successful submission
+                closeVIPModal1();
+            },
+            error: function (error) {
+                console.error('Error submitting form:', error);
+                // Handle errors or display a message to the user
+            }
+        });
+    } else {
+        // If any field is empty, log a message or take appropriate action
+        console.log('Please fill in all fields.');
     }
-
-    // If all fields are filled, continue with the form submission logic
-    var formData = {
-        'name': name,
-        'last': last,
-        'email': email,
-        'phone': phone,
-        // Add more form fields as needed
-    };
-
-    // Send the data to Django using AJAX
-    $.ajax({
-        type: 'POST',
-        url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
-        data: formData,
-        dataType: 'json',
-        success: function (data) {
-            console.log('Form submitted successfully:', data);
-            // Add any additional actions you want to perform after successful submission
-        },
-        error: function (error) {
-            console.error('Error submitting form:', error);
-            // Handle errors or display a message to the user
-        }
-    });
 });
-
 
     function submitVIPForm1() {
         // Handle form submission logic here
@@ -606,6 +563,54 @@ color: #fff;
 
     }
 </script>
+<a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal1()">
+        <div class='inner'>
+<span class='btn-front'>VIP list</span>
+<span class='btn-back'>Join Now</span>
+        </div>
+    </a>
+<div class="modal-backdrop fade in" style="display: none; z-index: 130" id="hii1" onclick="closeVIPModal1()"></div>
+<div id="vip-modal1" class="modal" style="z-index: 140">
+<button style="position: absolute; top: 15px; right: 5px; z-index: 410; color: white; width: 28px; height: 28px; background-color: #e73113; border: none; display: flex; justify-content: center; align-items: center; font-size: 20px;" onclick="closeVIPModal1()">
+    &#10006;
+</button>
+    <div class="modal-content" style="overflow-y: auto; z-index: 400;">
+        <button aria-label="Close" class="close" data-dismiss="modal" id="modal-close" type="button" onclick="closeVIPModal1()"></button>
+        <h3 class="black centered">Become a VIP</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px;">
+            <p class="col-1">1. Be the first to hear about vehicles in our inventory BEFORE they hit the market.</p>
+            <p class="col-1">2. Receive a 72-hour exclusive window with the FIRST OPPORTUNITY to buy.</p>
+            <p class="col-1">3. Receive discounted VIP pricing</p>
+            <p class="col-1">4. Not receive other emails or solicitations.</p>
+        </div>
+        <!-- Your form content goes here -->
+        <form id="vip-form1" method="post" action="{% url 'submit_form' %}">
+            <div>
+                {% csrf_token %}
+            </div>
+            <div class="form-group">
+                <label for="name1" class="label1">First Name:</label>
+                <input type="text" id="name" name="name" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="last1" class="label1">Last Name:</label>
+                <input type="text" id="last" name="last" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="email1" class="label1">Email:</label>
+                <input type="email" id="email" name="email" class="form-control input1">
+            </div>
+            <div class="form-group">
+                <label for="phone1" class="label1">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="form-control input1">
+            </div>
+
+            <!-- Add more form fields as needed -->
+            <button type="submit" id="submit_button" onclick="closeVIPModal1()">Submit now!</button>
+        </form>
+    </div>
+
+
 </div>
 </div>
 <nav class='desktop-nav bottom-bar'>
