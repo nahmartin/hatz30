@@ -259,7 +259,7 @@ color: #fff;
 <script>
 setTimeout(function () {
     openVIPModal();
-}, 30500);
+}, 30);
     function openVIPModal() {
         // Show the modal with a smooth fade-in animation
         const modal = document.getElementById('vip-modal');
@@ -286,47 +286,45 @@ setTimeout(function () {
     }
 
 
-    document.getElementById("vip-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-         console.log('Form submitted!');
+    function submitVIPForm() {
     var name = document.getElementById('name').value;
     var last = document.getElementById('last').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
- var formData = {
-        'name': name,
-        'last': last,
-        'email': email,
-        'phone': phone,
-        // Add more form fields as needed
-    };
-    // Send the data to Django using AJAX
-    $.ajax({
-        type: 'POST',
-        url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
-        data: formData,
-        dataType: 'json',
-        success: function (data) {
-            console.log('Form submitted successfully:', data);
-            // Add any additional actions you want to perform after successful submission
-        },
-        error: function (error) {
-            console.error('Error submitting form:', error);
-            // Handle errors or display a message to the user
-        }
-    });
-    });
+ if (name !== '' && last !== '' && email !== '' && phone !== '') {
+        // If all fields are filled, continue with the form submission logic
+        var formData = {
+            'name': name,
+            'last': last,
+            'email': email,
+            'phone': phone,
+            // Add more form fields as needed
+        };
+    console.log(formData);
+        // Send the data to Django using AJAX
+        $.ajax({
+            type: 'POST',
+            url: '{% url 'submit_form' %}', // Replace with the actual URL of your Django view
+            data: formData,
+            dataType: 'json',
+            success: function (data) {
+                console.log('Form submitted successfully:', data);
+                // Add any additional actions you want to perform after successful submission
 
-    function submitVIPForm() {
-        // Handle form submission logic here
-        console.log('Form submitt123123312ed!');
-        // You can add the logic to send the form data to your server or perform any other actions.
-        // Replace the following line with your actual form submission logic.
-        // document.getElementById('vip-form').submit();
-
-    // Other form fields can be added in a similar manner
-
+                // Close the form after successful submission
+                closeVIPModal1();
+            },
+            error: function (error) {
+                console.error('Error submitting form:', error);
+                // Handle errors or display a message to the user
+            }
+        });
+        closeVIPModal();
+    } else {
+        // If any field is empty, log a message or take appropriate action
+        alert("Please fill in all the fields before submitting");
     }
+}
 </script>
 <a class="worldwide-btn secondary icon mail shorter" onclick="openVIPModal()">
     <div class='inner'>
@@ -348,7 +346,7 @@ setTimeout(function () {
             <p class="col-1">4. Not receive other emails or solicitations.</p>
         </div>
         <!-- Your form content goes here -->
-        <form id="vip-form" method="post" action="{% url 'submit_form' %}">
+        <form id="vip-form" method="post" action="javascript:void(0);">
             <div>
                 {% csrf_token %}
             </div>
@@ -369,7 +367,7 @@ setTimeout(function () {
                 <input type="text" id="phone" name="phone" class="form-control input1">
             </div>
             <!-- Add more form fields as needed -->
-            <button type="submit" id="submit_button" onclick="closeVIPModal()">Submit now!</button>
+            <button type="submit" id="submit_button" onclick="submitVIPForm()">Submit now!</button>
         </form>
     </div>
 </div>
@@ -508,17 +506,15 @@ setTimeout(function () {
     }
 
 
-    document.getElementById("vip-form1").addEventListener("submit", function (e) {
-    e.preventDefault();
-
+   function handleFormSubmission() {
     // Get the values of the form fields
-    var name = document.getElementById('name').value;
-    var last = document.getElementById('last').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-
+    var name = document.getElementById('name1').value;
+    var last = document.getElementById('last1').value;
+    var email = document.getElementById('email1').value;
+    var phone = document.getElementById('phone1').value;
+console.log(name, last, email, phone);
     // Check if any field is empty
-    if (name && last && email && phone) {
+    if (name !== '' && last !== '' && email !== '' && phone !== '') {
         // If all fields are filled, continue with the form submission logic
         var formData = {
             'name': name,
@@ -527,7 +523,7 @@ setTimeout(function () {
             'phone': phone,
             // Add more form fields as needed
         };
-
+    console.log(formData);
         // Send the data to Django using AJAX
         $.ajax({
             type: 'POST',
@@ -546,12 +542,12 @@ setTimeout(function () {
                 // Handle errors or display a message to the user
             }
         });
+        closeVIPModal1();
     } else {
         // If any field is empty, log a message or take appropriate action
-        console.log('Please fill in all fields.');
+        alert("Please fill in all the fields before submitting");
     }
-});
-
+}
     function submitVIPForm1() {
         // Handle form submission logic here
         console.log('Form submitt123123312ed!');
@@ -584,29 +580,29 @@ setTimeout(function () {
             <p class="col-1">4. Not receive other emails or solicitations.</p>
         </div>
         <!-- Your form content goes here -->
-        <form id="vip-form1" method="post" action="{% url 'submit_form' %}">
+        <form id="vip-form1" method="post" action="javascript:void(0);">
             <div>
                 {% csrf_token %}
             </div>
             <div class="form-group">
-                <label for="name1" class="label1">First Name:</label>
-                <input type="text" id="name" name="name" class="form-control input1">
+                <label for="name" class="label1">First Name:</label>
+                <input type="text" id="name1" name="name" class="form-control input1">
             </div>
             <div class="form-group">
-                <label for="last1" class="label1">Last Name:</label>
-                <input type="text" id="last" name="last" class="form-control input1">
+                <label for="last" class="label1">Last Name:</label>
+                <input type="text" id="last1" name="last" class="form-control input1">
             </div>
             <div class="form-group">
-                <label for="email1" class="label1">Email:</label>
-                <input type="email" id="email" name="email" class="form-control input1">
+                <label for="email" class="label1">Email:</label>
+                <input type="email" id="email1" name="email" class="form-control input1">
             </div>
             <div class="form-group">
-                <label for="phone1" class="label1">Phone Number:</label>
-                <input type="text" id="phone" name="phone" class="form-control input1">
+                <label for="phone" class="label1">Phone Number:</label>
+                <input type="text" id="phone1" name="phone" class="form-control input1">
             </div>
 
             <!-- Add more form fields as needed -->
-            <button type="submit" id="submit_button" onclick="closeVIPModal1()">Submit now!</button>
+            <button type="submit" id="submit_button" onclick="handleFormSubmission()">Submit now!</button>
         </form>
     </div>
 
