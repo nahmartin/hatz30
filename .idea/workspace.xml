@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="chenged vin on 2 chevelles 1966 blue color , changed intercom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/car-finder.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car-finder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/sold.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sold.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/testimonials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +162,11 @@
       <workItem from="1706003628769" duration="167000" />
       <workItem from="1706043854496" duration="517000" />
       <workItem from="1706094550953" duration="189000" />
-      <workItem from="1706094811151" duration="25000" />
+      <workItem from="1706094811151" duration="185000" />
+      <workItem from="1706203766668" duration="836000" />
+      <workItem from="1706204862166" duration="446000" />
+      <workItem from="1706205553425" duration="4285000" />
+      <workItem from="1706210024137" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -362,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706043881893</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="chenged vin on 2 chevelles 1966 blue color , changed intercom">
+      <option name="closed" value="true" />
+      <created>1706094846777</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1706094846777</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
