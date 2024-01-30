@@ -22,8 +22,8 @@ def submit_form(request):
         print(f'Name: {name}, Phone: {phone}, last name: {last}, Eamil: {email}')
         subject = 'New Client'
         message = f'Name: {name}\nPhone: {phone}\nLast name: {last}\nEamil: {email}'
-        from_email = 'sales@worldwidevintageautos.org'  # Use your Titan Mail email address
-        recipient_list = 'sales@worldwidevintageautos.org'  # Replace with the recipient's email address
+        from_email = 'sales@masterpiecevintage.com'  # Use your Titan Mail email address
+        recipient_list = 'sales@masterpiecevintage.com'  # Replace with the recipient's email address
 
         # Call the send_email function to send the email
         send_email(from_email, 'numberone123123.', recipient_list, subject, message)
