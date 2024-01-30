@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="made the form work , but it still reloads the page">
+    <list default="true" id="56724224-888e-4d91-8ded-3619aeb1f164" name="Changes" comment="finally the forms work basically made them open be handled by button , now by w/e it was (form i get(html form with a bit of handling on the js side(or not)))">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,22 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/Desktop/hatz1-branch1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/hatz1-branch1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\site2-master" />
@@ -165,7 +164,9 @@
       <workItem from="1706203766668" duration="836000" />
       <workItem from="1706204862166" duration="446000" />
       <workItem from="1706205553425" duration="4285000" />
-      <workItem from="1706210024137" duration="3926000" />
+      <workItem from="1706210024137" duration="4138000" />
+      <workItem from="1706638807367" duration="47000" />
+      <workItem from="1706642147827" duration="681000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <option name="closed" value="true" />
@@ -391,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706211390248</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="finally the forms work basically made them open be handled by button , now by w/e it was (form i get(html form with a bit of handling on the js side(or not)))">
+      <option name="closed" value="true" />
+      <created>1706214048813</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1706214048813</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,6 +437,7 @@
     <MESSAGE value="chenged vin on 2 chevelles 1966 blue color" />
     <MESSAGE value="chenged vin on 2 chevelles 1966 blue color , changed intercom" />
     <MESSAGE value="made the form work , but it still reloads the page" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the form work , but it still reloads the page" />
+    <MESSAGE value="finally the forms work basically made them open be handled by button , now by w/e it was (form i get(html form with a bit of handling on the js side(or not)))" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally the forms work basically made them open be handled by button , now by w/e it was (form i get(html form with a bit of handling on the js side(or not)))" />
   </component>
 </project>
